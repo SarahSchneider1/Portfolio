@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins-regular.woff2') format('woff2'),
+         url('/assets/fonts/poppins-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins-bold.woff2') format('woff2'),
+         url('/assets/fonts/poppins-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins-italic.woff2') format('woff2'),
+         url('/assets/fonts/poppins-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
