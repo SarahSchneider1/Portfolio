@@ -1,0 +1,40 @@
+.social-links {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
+    padding: 0 20px; 
+    z-index: 10;
+    .line {
+        width: 100px;
+        border: 4px solid #9747FF; 
+        margin-right: 20px; 
+    }
+
+    .social-icons {
+        display: flex;
+        align-items: center;
+        
+        img {
+            width: 40px; 
+            height: auto;
+            margin-right: 20px; 
+            cursor: pointer; 
+
+            &:last-child {
+                margin-right: 0; 
+            }
+        }
+    }
+
+    .scroll-down {
+        transform: rotate(-270deg); 
+        font-size: 23px; 
+        font-weight: 400;
+        color: #ffffff; 
+        margin-left: 50px; 
+        margin-top: -250px;
+        white-space: nowrap; 
+        z-index: 7;
+    }
+}

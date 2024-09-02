@@ -17,10 +17,10 @@
 
         .profile-container {
             position: relative;
-            width: 440px;
+            width: 400px;
             height: auto;
             margin-right: 30px;
-
+            margin-top: 100px;
             .background-deco {
                 position: absolute;
                 top: 0;
@@ -29,7 +29,7 @@
 
                 img {
                     width: 500px;
-                    height: 1000px;
+                    height: 800px;
                     display: block;
                 }
             }
@@ -51,7 +51,7 @@
             text-align: left; 
 
             .rotated-text {
-                margin-bottom: 50px;
+                margin-bottom: 90px;
                 h2 {
                     font-size: 70px;
                     font-weight: 400;
@@ -82,6 +82,7 @@
 
                 .letstalk {
                     margin-top: 50px;
+                    margin-right: 70px;
                     align-self: center; 
                     width: 105px;
                     height: 58px;
@@ -107,15 +108,15 @@
     }
 
     .vector-landing-page {
-        width: 100%;
-        height: 100vh; 
+        width: 100vw;
+        height: 35vw; 
         position: absolute;
-        bottom: 0; 
+        bottom: 0px; 
         left: 0;
-        z-index: 3; 
+        z-index: 2; 
+        overflow: hidden; 
     
         img {
-            margin-top: 350px;
             width: 100%;
             height: auto; 
             object-fit: cover; 
@@ -123,42 +124,4 @@
         }
     }
     
-    }
-
-    .social-links {
-        display: flex;
-        align-items: center; 
-        justify-content: space-between; 
-        width: 100%;
-        padding: 0 20px; 
-        z-index: 10;
-        .line {
-            width: 100px;
-            border: 4px solid #9747FF; 
-            margin-right: 20px; 
-        }
-    
-        .social-icons {
-            display: flex;
-            align-items: center;
-            
-            img {
-                width: 40px; 
-                height: auto;
-                margin-right: 20px; 
-                cursor: pointer; 
-    
-                &:last-child {
-                    margin-right: 0; 
-                }
-            }
-        }
-    
-        .scroll-down {
-            transform: rotate(-270deg); 
-            font-size: 1.5rem; 
-            color: #ffffff; 
-            margin-left: auto; 
-            white-space: nowrap; 
-        }
-    }
+}
