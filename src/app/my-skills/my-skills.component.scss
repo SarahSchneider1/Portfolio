@@ -1,0 +1,59 @@
+// Container für beide Sektionen
+.container {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto; // Zentriert den Container horizontal
+    padding: 20px; // Optional, für etwas Abstand vom Rand
+  
+    .skillsicons {
+      flex: 0 0 60%; // Nimmt 60% der Breite des Containers ein
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; // Abstand zwischen den Icons
+      align-items: center; // Zentriert die Icons vertikal
+  
+      .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 0 22%; // Basisbreite von ca. 22% für 4 Icons nebeneinander
+        box-sizing: border-box;
+        text-align: center;
+  
+        .skillimg {
+          max-width: 100px; // Beispielwert, je nach Größe der Icons anpassen
+          height: auto;
+        }
+  
+        .skillname {
+          margin-top: 10px;
+        }
+      }
+    }
+  
+    .skillscontent {
+      flex: 0 0 40%; // Nimmt 40% der Breite des Containers ein
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start; // Optional, je nach Layout-Anforderungen anpassen
+      padding: 20px; // Optional, für etwas Abstand vom Rand
+  
+      h1 {
+        font-size: 2rem; // Beispielwert, anpassen nach Bedarf
+        margin-bottom: 10px;
+      }
+  
+      span {
+        display: block;
+        margin-bottom: 15px;
+      }
+  
+      a {
+        text-decoration: none;
+        color: #007bff; // Beispiel für Link-Farbe, anpassen nach Bedarf
+        font-weight: bold;
+      }
+    }
+  }
+  

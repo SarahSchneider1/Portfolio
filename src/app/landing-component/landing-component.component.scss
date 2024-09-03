@@ -73,13 +73,13 @@
                 justify-content: center;
                 z-index: 10;
                 h1 {
-                    font-size: 88px;
+                    font-size: 78px;
                     color: #ffffff;
                     margin: 0;
                 }
 
                 p {
-                    font-size: 58px;
+                    font-size: 62px;
                     color: #9747FF;
                     margin: 0;
                 }
@@ -144,6 +144,7 @@
     .left-section {
         display: flex;
         align-items: center;
+        z-index: 10;
 
         .lineleft {
             width: 300px;
@@ -195,4 +196,36 @@
         margin-left: auto;
         position: relative;
     }
+}
+.background-wrapper {
+    position: absolute;
+    right: 0; 
+    transform: translateY(100px); 
+    overflow: hidden; 
+}
+
+.background-decolila {
+    width: 300px;
+    height: auto;
+    transform: rotate(-90deg);
+    position: relative; 
+    margin-right: -100px;
+    bottom: 0;
+}
+
+$typing-duration: 5s; // Dauer der Tipp-Animation
+
+.frontend-developer {
+  display: inline-block; // Um sicherzustellen, dass der Text korrekt angezeigt wird
+  overflow: hidden; // Verhindert, dass der Text überläuft
+  white-space: nowrap; // Text in einer Zeile halten
+  position: relative; // Für die `clip-path`-Animation erforderlich
+  clip-path: inset(0 100% 0 0); // Startclip, der den gesamten Text verbirgt
+  animation: typing $typing-duration steps(40, end) forwards; // Tipp-Animation
+
+  // Tipp-Animation
+  @keyframes typing {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
 }
