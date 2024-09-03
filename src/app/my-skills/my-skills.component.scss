@@ -1,59 +1,98 @@
-// Container für beide Sektionen
 .container {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 100px;
+  color: white;
+  gap: 100px;
+
+  .skillsicons {
+    flex: 0 0 60%;
     display: flex;
-    max-width: 1440px;
-    margin: 0 auto; // Zentriert den Container horizontal
-    padding: 20px; // Optional, für etwas Abstand vom Rand
-  
-    .skillsicons {
-      flex: 0 0 60%; // Nimmt 60% der Breite des Containers ein
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px; // Abstand zwischen den Icons
-      align-items: center; // Zentriert die Icons vertikal
-  
-      .skill {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1 0 22%; // Basisbreite von ca. 22% für 4 Icons nebeneinander
-        box-sizing: border-box;
-        text-align: center;
-  
-        .skillimg {
-          max-width: 100px; // Beispielwert, je nach Größe der Icons anpassen
-          height: auto;
-        }
-  
-        .skillname {
-          margin-top: 10px;
-        }
-      }
-    }
-  
-    .skillscontent {
-      flex: 0 0 40%; // Nimmt 40% der Breite des Containers ein
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+
+    .skill {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start; // Optional, je nach Layout-Anforderungen anpassen
-      padding: 20px; // Optional, für etwas Abstand vom Rand
-  
-      h1 {
-        font-size: 2rem; // Beispielwert, anpassen nach Bedarf
-        margin-bottom: 10px;
+      align-items: center;
+      flex: 1 0 22%;
+      box-sizing: border-box;
+      text-align: center;
+
+      .skillimg {
+        max-width: 100px;
+        height: auto;
+        transition: transform 0.3s ease;
       }
-  
-      span {
-        display: block;
-        margin-bottom: 15px;
+
+      &:hover .skillimg {
+        transform: translateY(-10px);
       }
-  
-      a {
-        text-decoration: none;
-        color: #007bff; // Beispiel für Link-Farbe, anpassen nach Bedarf
-        font-weight: bold;
+
+      .skillname {
+        margin-top: 10px;
       }
     }
+
+    .placeholder {
+      visibility: hidden;
+      flex: 1 0 22%;
+    }
   }
-  
+
+  .skillscontent {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: flex-end; 
+    padding: 20px;
+    margin-bottom: 10px;
+    height: 100%; 
+    text-align: right; 
+
+    h1 {
+      font-size: 90px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    span {
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 50px; 
+      font-size: 18px;
+    }
+
+    a {
+      display: inline-block; 
+      margin-top: auto;
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+}
+
+.buttonskills {
+  width: 155px;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  padding: 0 30px;
+  background-color: #1CDAE6;
+  color: #ffffff;
+  text-align: center; 
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 4;
+
+  &:hover {
+    background-color: #9747FF;
+    transform: scale(1.1);
+  }
+}
