@@ -1,16 +1,18 @@
 .header {
     width: 100%;
     min-height: 109.03px;
-    background-color:  #141D2F;
+    background-color: #141D2F;
     padding: 37px 100px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     z-index: 1000;
     box-sizing: border-box;
-    position: absolute;
-
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    
     .main {
         width: 100%;
         max-width: 1600px;
@@ -22,7 +24,7 @@
         .logoheader {
             img {
                 height: auto;
-                max-height: 50px; 
+                max-height: 50px;
             }
         }
 
@@ -38,33 +40,31 @@
                 margin-left: 20px;
                 font-size: 23px;
                 font-weight: 400;
-                position: relative; 
+                position: relative;
                 transition: color 0.2s ease;
-            
+                
                 &::after {
                     content: '';
                     position: absolute;
                     left: 50%;
-                    bottom: -2px; 
+                    bottom: -2px;
                     width: 0;
                     height: 2px;
                     background-color: #1CDAE6;
-                    transition: width 0.4s ease, left 0.4s ease; 
+                    transition: width 0.4s ease, left 0.4s ease;
                     transform: translateX(-50%);
                 }
-            
+
                 &:hover {
-                    color: #1CDAE6; 
-            
+                    color: #1CDAE6;
+
                     &::after {
-                        width: 100%; 
+                        width: 100%;
                         left: 0;
-                        transform: translateX(0); 
+                        transform: translateX(0);
                     }
                 }
             }
-            
-            }
         }
     }
-
+}

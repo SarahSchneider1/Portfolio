@@ -21,18 +21,7 @@
             height: auto;
             margin-right: 30px;
             margin-top: 100px;
-            .background-deco {
-                position: absolute;
-                top: 0;
-                left: -100px;
-                z-index: 0;
 
-                img {
-                    width: 500px;
-                    height: 800px;
-                    display: block;
-                }
-            }
 
             .profile-image {
                 position: relative;
@@ -43,15 +32,30 @@
             }
         }
 
+        
+    .background-deco {
+        position: absolute;
+        top: 0;
+        left: -100px;
+        z-index: 0;
+
+    img {
+        width: 500px;
+        height: 800px;
+        display: block;
+    }
+}
+
         .text-container {
             display: flex;
-            align-items: center; 
+            align-items: center;
             height: 705px;
-            max-width: calc(100% - 430px); 
-            text-align: left; 
+            max-width: calc(100% - 430px);
+            text-align: left;
 
             .rotated-text {
                 margin-bottom: 90px;
+
                 h2 {
                     font-size: 70px;
                     font-weight: 400;
@@ -67,7 +71,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-
+                z-index: 10;
                 h1 {
                     font-size: 88px;
                     color: #ffffff;
@@ -83,7 +87,7 @@
                 .letstalk {
                     margin-top: 50px;
                     margin-right: 70px;
-                    align-self: center; 
+                    align-self: center;
                     width: 105px;
                     height: 58px;
                     line-height: 58px;
@@ -98,6 +102,7 @@
                     font-weight: 400;
                     transition: background-color 0.3s ease, transform 0.3s ease;
                     z-index: 4;
+
                     &:hover {
                         background-color: #9747FF;
                         transform: scale(1.1);
@@ -109,19 +114,85 @@
 
     .vector-landing-page {
         width: 100vw;
-        height: 35vw; 
+        height: 50vw;
         position: absolute;
-        bottom: 0px; 
+        bottom: -110px;
         left: 0;
-        z-index: 2; 
-        overflow: hidden; 
-    
+        z-index: 2;
+        overflow: hidden;
+
         img {
             width: 100%;
-            height: auto; 
-            object-fit: cover; 
+            height: auto;
+            object-fit: cover;
             display: block;
         }
     }
-    
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    top: 0;
+
+    .left-section {
+        display: flex;
+        align-items: center;
+
+        .lineleft {
+            width: 300px;
+            height: 4px;
+            background-color: #9747FF;
+            margin-right: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 35px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+                    transform: scale(1.1);
+                }
+            }
+
+            p {
+                font-size: 22px;
+                font-weight: 400;
+                color: white; 
+                margin: 0; 
+            }
+        }
+    }
+
+    .scroll-down {
+        transform: rotate(-270deg);
+        font-size: 23px;
+        font-weight: 400;
+        color: #ffffff;
+        white-space: nowrap;
+        z-index: 10;
+        margin-top: -250px;
+        margin-left: auto;
+        position: relative;
+    }
 }
