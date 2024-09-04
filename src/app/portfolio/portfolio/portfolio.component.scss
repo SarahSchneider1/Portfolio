@@ -1,0 +1,129 @@
+.Portfolio {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: 100%;
+
+    .container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .headline {
+      text-align: center;
+      margin-bottom: 50px;
+
+      h1 {
+        font-size: 90px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      span {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 30px;
+      }
+    }
+
+    .project {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 50px;
+
+      &.reverse {
+        flex-direction: row-reverse;
+
+        .project-details {
+          text-align: right; /* Text rechtsbündig für Join */
+
+          .project-buttons {
+            justify-content: flex-end; /* Buttons rechtsbündig */
+          }
+        }
+      }
+
+      .project-image {
+        width: 50%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .project-details {
+        width: 50%;
+        text-align: left; /* Text linksbündig für Sharkie */
+
+        h2 {
+          font-size: 36px;
+          font-weight: 700;
+          margin: 0 0 10px;
+          color: #9747FF;
+        }
+
+        .techstack {
+          display: block;
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          color: #1CDAE6;
+        }
+
+        .discription {
+          display: block;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 30px;
+        }
+
+        .project-buttons {
+          display: flex;
+          gap: 10px;
+          justify-content: flex-start; /* Buttons linksbündig, Standardausrichtung */
+          
+          button {
+            width: 155px;
+            height: 58px;
+            line-height: 58px;
+            border-radius: 10px;
+            padding: 0 30px;
+            font-size: 20px;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.6s ease, color 0.6s ease; 
+        
+            &.livetest {
+                background-color: #9747FF;
+                color: #ffffff;
+                text-align: center;
+        
+                &:hover {
+                    background-color: #1CDAE6;
+                    color: #ffffff; 
+                }
+            }
+
+            &.github {
+              background-color: transparent;
+              color: #ffffff;
+              border: 2px solid #1CDAE6;
+
+              &:hover {
+                background-color: #1CDAE6;
+                color: #ffffff;
+                transform: background-color 0.6s ease, color 0.6s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+}
