@@ -4,20 +4,25 @@
   margin: 0 auto;
   margin-top: 100px;
   color: white;
-  gap: 100px;
+  gap: 2%; // Dynamischer Abstand zwischen den Bereichen
+
+  .skillsicons,
+  .skillscontent {
+    flex: 1;
+  }
 
   .skillsicons {
-    flex: 0 0 60%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
+    max-width: 60%;
 
     .skill {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 1 0 22%;
+      flex: 1 1 22%;
       box-sizing: border-box;
       text-align: center;
 
@@ -25,35 +30,34 @@
         max-width: 100px;
         height: auto;
         transition: transform 0.3s ease;
-      }
 
-      &:hover .skillimg {
-        transform: translateY(-10px);
+        &:hover {
+          transform: translateY(-10px);
+        }
       }
 
       .skillname {
         margin-top: 10px;
-        font-size: 16;
+        font-size: 16px;
         font-weight: 700;
       }
     }
 
     .placeholder {
       visibility: hidden;
-      flex: 1 0 22%;
+      flex: 1 1 22%;
     }
   }
 
   .skillscontent {
-    flex: 0 0 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    align-items: flex-end; 
+    justify-content: center; // Zentriert den Inhalt vertikal
+    align-items: flex-end; // Positioniert den Inhalt am rechten Rand
+    max-width: 40%;
     padding: 20px;
     margin-bottom: 10px;
-    height: 100%; 
-    text-align: right; 
+    text-align: right;
 
     h1 {
       font-size: 90px;
@@ -64,37 +68,30 @@
     span {
       display: block;
       margin-top: 30px;
-      margin-bottom: 50px; 
+      margin-bottom: 50px;
       font-size: 18px;
     }
 
-    a {
-      display: inline-block; 
-      margin-top: auto;
-      text-decoration: none;
+    .buttonskills {
+      width: 155px;
+      height: 58px;
+      line-height: 58px;
+      border-radius: 10px;
+      padding: 0 30px;
+      background-color: #1CDAE6;
       color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 400;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      z-index: 4;
+
+      &:hover {
+        background-color: #9747FF;
+        transform: scale(1.1);
+      }
     }
-  }
-}
-
-.buttonskills {
-  width: 155px;
-  height: 58px;
-  line-height: 58px;
-  border-radius: 10px;
-  padding: 0 30px;
-  background-color: #1CDAE6;
-  color: #ffffff;
-  text-align: center; 
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 400;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 4;
-
-  &:hover {
-    background-color: #9747FF;
-    transform: scale(1.1);
   }
 }
