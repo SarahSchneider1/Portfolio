@@ -1,162 +1,196 @@
 section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+
+  .contact-header {
+    font-size: 90px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin: 0;
+  }
+
+  .content {
     display: flex;
-    flex-direction: column;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 50px;
-  
-    .contact-header {
-      font-size: 90px;
-      font-weight: 700;
-      color: white;
-      text-align: center;
-      margin-bottom: 20px;
-      margin: 0;
-    }
-  
-    .content {
+    gap: 20px;
+    position: relative; // Positionierung relativ, damit der Pfeil-Container absolut positioniert werden kann
+    min-height: 600px; // Optional: Damit der Inhalt genügend Platz hat
+    margin-bottom: 120px;
+
+    .leftcontent {
+      flex: 0 0 40%;
       display: flex;
-      gap: 20px;
-  
-      .leftcontent {
-        flex: 0 0 40%;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      color: white;
+
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+    }
+
+    .rightcontent {
+      flex: 0 0 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: transparent;
+      position: relative; // Sicherstellen, dass der Pfeil-Container relativ zu diesem Element positioniert wird
+
+      form {
+        max-width: 620px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
-        color: white;
-  
-        h2 {
-          font-size: 32px;
-          font-weight: 700;
-          margin-bottom: 20px;
-        }
-  
-        span {
+        gap: 30px;
+        border: none;
+
+        input,
+        textarea {
+          width: 100%;
+          height: 50px;
+          border: 1px solid #8a2be2;
+          border-radius: 10px;
+          padding: 15px;
+          box-sizing: border-box;
           font-size: 16px;
-          font-weight: 400;
-          margin-bottom: 20px;
+          font-family: inherit;
+          color: white;
+          background-color: transparent;
+          outline: none;
+          transition: color 0.3s ease, border-color 0.3s ease;
+
+          &::placeholder {
+            color: white;
+          }
+
+          &:hover {
+            border-color: #1CDAE6;
+          }
+
+          &:focus {
+            border-color: #1CDAE6;
+            color: #1CDAE6;
+          }
+        }
+
+        textarea {
+          min-height: 200px;
+          resize: vertical;
+        }
+
+        .privacy-policy {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+          color: white;
+
+          input[type="checkbox"] {
+            width: 8px;                      // Größe der Checkbox auf 8px reduziert
+            height: 8px;                     // Größe der Checkbox auf 8px reduziert
+            border: 2px solid #1CDAE6;       // Randfarbe bleibt gleich
+            border-radius: 0;               // Ecken der Checkbox bleiben quadratisch
+            background-color: transparent;  // Hintergrundfarbe transparent
+            appearance: none;               // Standard-Stil entfernen
+            cursor: pointer;
+            position: relative;
+          
+            &:checked {
+              background-color: transparent;
+              border-color: #1CDAE6;        // Randfarbe bleibt gleich
+          
+              &::before {
+                content: "";
+                width: 8px;                // Größe des Hakens angepasst
+                height: 8px;               // Größe des Hakens angepasst
+                border: solid #1CDAE6;
+                border-width: 0 2px 2px 0;
+                position: absolute;
+                top: 1px;                  // Position des Hakens angepasst
+                left: 2px;                 // Position des Hakens angepasst
+                transform: rotate(45deg);  // Hakenrichtung korrigiert
+              }
+            }
+          
+            &:focus {
+              outline: none;
+            }
+          }
+
+          label {
+            font-size: 12px;
+          }
+        }
+
+        button {
+          width: 100px;
+          height: 40px;
+          background-color: #1c1c1c;
+          color: #ffffff;
+          border: 1px solid #8a2be2;
+          border-radius: 10px;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          padding: 0 20px;
+          margin: 0 auto;
+
+          &:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+          }
         }
       }
-  
-      .rightcontent {
-        flex: 0 0 60%;
+
+      .arrow-container {
+        position: absolute;            // Absolut positioniert, relativ zum Elterncontainer
+        bottom: 20px;                 // 20px Abstand vom unteren Rand
+        right: 20px;                  // 20px Abstand vom rechten Rand
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: transparent;
-  
-        form {
-          max-width: 620px;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 30px; 
-          border: none;
-  
-          input,
-          textarea {
-            width: 100%;
-            height: 50px;
-            border: 1px solid #8a2be2;
-            border-radius: 10px;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 16px;
-            font-family: inherit;
-            color: white; 
-            background-color: transparent;
-            outline: none;
-            transition: color 0.3s ease, border-color 0.3s ease; 
-  
-            &::placeholder {
-              color: white;
-            }
-  
-            &:hover {
-              border-color: #1CDAE6; 
-            }
-  
-            &:focus {
-              border-color: #1CDAE6;
-              color: #1CDAE6;
-            }
+        justify-content: flex-end;
+
+        svg {
+          width: 17px;               // SVG-Größe auf 17px gesetzt
+          height: 17px;              // SVG-Größe auf 17px gesetzt
+          border: 2px solid white;   // Weißer dünner Kreis
+          border-radius: 50%;        // Kreisform
+          padding: 10px;
+          transition: all 0.3s ease; // Übergang für Hover-Effekt
+          margin-right: 120px;
+          margin-top: 100px;
+
+          path {
+            transition: fill 0.3s ease; // Übergang für die Farbe des SVG-Pfads
           }
-  
-          textarea {
-            min-height: 200px;
-            resize: vertical;
-          }
-  
-          .privacy-policy {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: white;
-            input[type="checkbox"] {
-                width: 10px;
-                height: 10px;
-                border: 2px solid #1CDAE6; 
-                background-color: transparent; 
-                appearance: none; 
-                cursor: pointer;
-                border-radius: 0; 
-                position: relative; 
-                
-                &:checked {
-                  background-color: transparent; 
-                  border-color: #1CDAE6; 
-              
-                  &::before {
-                    content: "";
-                    width: 10px;
-                    height: 10px;
-                    border: solid #1CDAE6; 
-                    border-width: 0 2px 2px 0; 
-                    position: absolute;
-                    top: 4px; 
-                    left: 5px; 
-                    transform: rotate(-45deg); 
-                  }
-                }
-              
-                &:focus {
-                  outline: none; 
-                }
-              }
-              
-              
-              
-  
-            label {
-              font-size: 12px;
-            }
-          }
-  
-          button {
-            width: 100px;
-            height: 40px;
-            background-color: #1c1c1c; 
-            color: #ffffff;
-            border: 1px solid #8a2be2;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            padding: 0 20px;
-            margin: 0 auto;
-  
-            &:hover {
-              background-color: #333333; 
-              transform: scale(1.05);
+        }
+
+        &:hover {
+          svg {
+            border-color: #1CDAE6;   // Kreisfarbe wird Hellblau
+
+            path {
+              fill: #1CDAE6;         // SVG-Pfeil wird Hellblau
             }
           }
         }
       }
     }
   }
-  
+}
