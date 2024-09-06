@@ -85,9 +85,8 @@
 
         .project-buttons {
           display: flex;
-          gap: 10px;
-          justify-content: flex-start; /* Buttons linksbündig, Standardausrichtung */
-          
+          gap: 50px;
+          justify-content: flex-start; 
           button {
             width: 155px;
             height: 58px;

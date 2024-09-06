@@ -4,7 +4,7 @@
   margin: 0 auto;
   margin-top: 100px;
   color: white;
-  gap: 2%; // Dynamischer Abstand zwischen den Bereichen
+  gap: 2%;
 
   .skillsicons,
   .skillscontent {
@@ -52,17 +52,26 @@
   .skillscontent {
     display: flex;
     flex-direction: column;
-    justify-content: center; // Zentriert den Inhalt vertikal
-    align-items: flex-end; // Positioniert den Inhalt am rechten Rand
+    justify-content: center;
+    align-items: flex-end;
     max-width: 40%;
     padding: 20px;
     margin-bottom: 10px;
     text-align: right;
+    position: relative;
 
-    h1 {
-      font-size: 90px;
-      font-weight: 700;
-      margin: 0;
+    .title-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: flex-end; // Rechtsbündig ausrichten
+
+      h1 {
+        font-size: 90px;
+        font-weight: 700;
+        margin: 0;
+        z-index: 1;
+      }
     }
 
     span {

@@ -8,6 +8,7 @@ html, body {
     display: flex;
     flex-direction: column;
     color: white;
+
   }
   
   .footer {
@@ -17,7 +18,7 @@ html, body {
     height: 290px;
     border-top: 4px solid #1CDAE6;
     padding: 0 50px;
-    
+    z-index: 20;
     .footer-section {
       display: flex;
       flex-direction: column;
@@ -61,13 +62,14 @@ html, body {
               transition: all 0.3s ease;
   
               &:hover {
-                box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
-                transform: scale(1.1);
+                width: 35px;
+                height: 35px;
+                transform: scale(1.2);
+              }
               }
             }
           }
         }
       }
     }
-  }
   

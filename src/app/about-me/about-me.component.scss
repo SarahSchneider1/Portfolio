@@ -103,8 +103,8 @@
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; /* Sorgt dafür, dass das Bild den gesamten Container ausfüllt und dabei das Seitenverhältnis beibehält */
-                    border-radius: 50%; /* Macht das Bild ebenfalls rund, um perfekt in den Container zu passen */
+                    object-fit: cover; 
+                    border-radius: 50%; 
                 }
             }
         }
