@@ -22,9 +22,26 @@
         align-items: center;
 
         .logoheader {
-            img {
-                height: auto;
-                max-height: 50px;
+            .logo-text {
+                color: #ffffff;
+                font-size: 36px;
+                font-weight: 400;
+                display: inline-block;
+                
+                &::before, &::after {
+                    content: '<>';
+                    color: #1CDAE6;
+                }
+                
+                &::before {
+                    content: '<';
+                    color: #1CDAE6;
+                }
+                
+                &::after {
+                    content: '>';
+                    color: #1CDAE6;
+                }
             }
         }
 

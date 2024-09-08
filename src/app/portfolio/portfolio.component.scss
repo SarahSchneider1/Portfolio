@@ -35,30 +35,23 @@
   h1 {
     font-size: 90px;
     font-weight: 700;
-    margin: 0 20px; 
     white-space: nowrap;
-  }
-
-  .short-stick {
-    height: 4px;
-    width: 70px;
-    background-color: #9747FF;;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    margin:0;
   }
 
   .long-stick {
     height: 4px;
     width: 100%;
     max-width: none;
-    margin-right: -59VW;
-    background-color: #9747FF;;
+    background-color: #9747FF;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     position: absolute;
-    right: 0;
-    margin-left: 20px;
-    transform: translateX(100px); 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    margin-left: calc(100% - 90px); 
+    margin-right: -500px; 
   }
 
   .project {
