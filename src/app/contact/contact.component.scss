@@ -7,13 +7,45 @@
   position: relative; 
   overflow: hidden; 
 
-  .contact-header {
+  .headline-with-stick-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .headline-with-stick {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    max-width: none;
+    padding: 0 40px;
+    position: relative;
+  }
+
+  h1 {
     font-size: 90px;
     font-weight: 700;
     color: white;
     text-align: center;
-    margin-bottom: 20px;
     margin: 0;
+    white-space: nowrap; 
+  }
+
+  .long-stick {
+    height: 4px;
+    width: 100%;
+    max-width: none;
+    background-color: #9747FF;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    margin-left: calc(100% - 100px);
+    margin-right: -500px
   }
 
   .content {
@@ -27,7 +59,6 @@
     margin-bottom: 80px;
     z-index: 1; 
   
-
     .leftcontent {
       flex: 0 0 40%;
       display: flex;
@@ -150,8 +181,8 @@
 
             &::before {
               content: "";
-              width: 6px;
-              height: 10px;
+              width: 16px;
+              height: 20px;
               border: solid #1CDAE6;
               border-width: 0 2px 2px 0;
               position: absolute;
@@ -177,41 +208,24 @@
           font-weight: 400;
           cursor: pointer;
           padding: 0 20px;
-          margin: 0 auto;
-          box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.2);
+          line-height: 58px;
+          transition: background-color 0.6s ease, color 0.6s ease;
+
+          &:hover {
+            background-color: #1CDAE6;
+          }
         }
       }
 
       .arrow-container {
         position: absolute;
-        bottom: 0;
-        right: 20px;
-        display: flex;
-        justify-content: flex-end;
+        bottom: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
 
         svg {
-          width: 17px;
-          height: 17px;
-          border: 2px solid white;
-          border-radius: 50%;
-          padding: 10px;
-          transition: all 0.3s ease;
-          margin-right: 120px;
-          margin-top: 100px;
-
-          path {
-            transition: fill 0.3s ease;
-          }
-        }
-
-        &:hover {
-          svg {
-            border-color: #1CDAE6;
-
-            path {
-              fill: #1CDAE6;
-            }
-          }
+          fill: #1CDAE6;
         }
       }
     }
@@ -219,15 +233,23 @@
 
   .shadow {
     position: absolute;
-    left: 100px;
+    left: 500px;
     transform: translateX(-50%);
-    bottom: 0; 
-    width: 50vw; 
-    height: 30vw; 
+    left: 0;
+    bottom: 0;
+    width: 70%; 
+    height: 70%; 
     background-image: url('/assets/img/33. Purple shadow Footer.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1; 
     pointer-events: none; 
   }
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
 }

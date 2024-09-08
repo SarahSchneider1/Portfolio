@@ -1,6 +1,12 @@
 <section class="contact-section">
-  <h1 class="contact-header">Contact</h1> 
+  <div class="headline-with-stick-wrapper">
+    <div class="headline-with-stick">
+      <h1>Contact</h1>
+      <div class="long-stick"></div>
+    </div>
+  </div>
   <div class="content">
+
     <div class="leftcontent">
       <h2>Got a problem to solve?</h2>
       <span>Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.</span>
@@ -9,10 +15,16 @@
     <div class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required>
+        <!-- @if (!name.valid && name.touched) {
+          <span class="error-message">Please enter a name</span>
+        } -->
         <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        <!-- @if (!email.valid && email.touched) {
+          <span class="error-message">Please enter a e-mail</span>
+        } -->
         <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your Message" required></textarea>
         @if (!message.valid && message.touched) {
-          <span>Please enter a message</span>
+          <span class="error-message">Please enter a message</span>
         }
         
         <div class="privacy-policy">

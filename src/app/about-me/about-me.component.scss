@@ -3,22 +3,7 @@
     color: white;
     position: relative;
     width: 100%;
-
-    .scroll-down {
-        transform: rotate(-270deg);
-        font-size: 23px;
-        font-weight: 400;
-        color: #ffffff;
-        white-space: nowrap;
-        z-index: 10;
-        margin-top: -250px;
-        margin-left: auto;
-        position: relative;
-    }
-
     
-    
-
     .about-section {
         display: flex;
         justify-content: space-between;
@@ -36,13 +21,11 @@
             padding-right: 20px;
 
             .about-text {
-                flex: 1;
                 margin-bottom: 20px;
 
                 h1 {
                     font-size: 90px;
                     font-weight: 700;
-                    margin-bottom: 10px;
                     color: #ffffff;
                 }
 
@@ -60,7 +43,6 @@
 
                 img {
                     width: 30px;
-                    height: auto;
                     margin-right: 15px;
                     transition: transform 0.3s ease;
 
@@ -73,19 +55,17 @@
                     font-size: 18px;
                     font-weight: 400;
                     color: #ffffff;
-                    margin: 0;
                 }
             }
         }
 
         .right-side {
-            margin-top: 70px;
+            margin-top: 130px;
             flex-basis: 40%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            z-index: 10;
 
             .round-image {
                 width: 400px;
@@ -93,41 +73,26 @@
                 border-radius: 50%;
                 border: 5px solid #1CDAE6;
                 overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: transform 0.3s ease;
-                position: relative;
-                z-index: 1;
 
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; 
-                    border-radius: 50%; 
+                    object-fit: cover;
+                    border-radius: 50%;
                 }
             }
         }
     }
+
+    .about-shadow {
+        position: absolute;
+        top: -200px;  
+        right: -20vw;
+        width: 40vw; 
+        height: 60vh;  
+        background-image: url('/assets/img/30. Purple shadow about me.png');
+        background-size: contain;  
+        background-repeat: no-repeat;
+        z-index: 9;
+    }
 }
-
-.line-container {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 100vw;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-.lineright {
-    position: absolute;
-    right: 0;
-    width: 20vw;
-    height: 4px;
-    background-color: #1CDAE6;
-    box-sizing: border-box;
-}
-
-
-
