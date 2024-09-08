@@ -76,7 +76,7 @@ html, body {
       .social-icons {
         display: flex;
         align-items: center;
-        gap: 35px; /* Abstand zwischen den Icons */
+        gap: 35px; 
 
         a {
           img {
@@ -89,7 +89,7 @@ html, body {
             &:hover {
               width: 35px;
               height: 35px;
-              transform: scale(1.2); /* sanfter Zoom-Effekt */
+              transform: scale(1.2); 
             }
           }
         }
