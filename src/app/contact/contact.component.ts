@@ -52,3 +52,19 @@ export class ContactComponent {
   }
 
 }
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'  // Macht das Scrollen sanft
+  });
+}
+
+// Event-Listener hinzufügen, nachdem das DOM vollständig geladen ist
+document.addEventListener('DOMContentLoaded', () => {
+  const arrow = document.querySelector('.arrow-container') as HTMLElement;
+
+  if (arrow) {
+    arrow.addEventListener('click', scrollToTop);
+  }
+});

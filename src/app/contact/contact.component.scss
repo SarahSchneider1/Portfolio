@@ -223,51 +223,53 @@
         right: 10px;
         width: 36px;
         height: 36px;
-        border: 2px solid #1CDAE6; /* Border around the arrow */
+        border: 2px solid white; 
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: all 0.3s ease;
-
+        transition: border-color 0.3s ease; 
+        background-color: transparent; 
+      
         svg {
-          fill: #1CDAE6;
+          fill: white; 
           width: 24px;
           height: 24px;
+          transition: fill 0.3s ease; 
         }
-
+      
         &:hover {
-          background-color: rgba(28, 218, 230, 0.2);
-          transform: scale(1.1);
-        }
-
-        &:active {
-          transform: scale(0.9);
+          border-color: #1CDAE6; 
+          fill: #1CDAE6;
+          
+          svg {
+            fill: #1CDAE6; 
+          }
         }
       }
     }
+  
+    .shadow {
+      position: absolute;
+      left: 500px;
+      transform: translateX(-50%);
+      left: 0;
+      bottom: 0;
+      width: 70%; 
+      height: 70%; 
+      background-image: url('/assets/img/33. Purple shadow Footer.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1; 
+      pointer-events: none; 
+    }
   }
 
-  .shadow {
-    position: absolute;
-    left: 500px;
-    transform: translateX(-50%);
-    left: 0;
-    bottom: 0;
-    width: 70%; 
-    height: 70%; 
-    background-image: url('/assets/img/33. Purple shadow Footer.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1; 
-    pointer-events: none; 
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
   }
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  display: block;
 }
