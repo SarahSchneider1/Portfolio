@@ -12,28 +12,34 @@
       <span>Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.</span>
       <span>Need a Frontend developer? <b>Contact me!</b></span>
     </div>
+    
     <div class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <!-- <input [(ngModel)]="contactData.name" [ngClass]="{'invalid': name.invalid && name.touched}" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel">
-        <span *ngIf="name.invalid && name.touched" class="error-message">Please enter a name</span>
-         -->
-        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-        <!-- @if (!email.valid && email.touched) {
-          <span class="error-message">Please enter a e-mail</span>
-        } -->
+
+        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel" class="form-control" [ngClass]="{'is-invalid': name.invalid && name.touched}">
+        @if (!name.valid && name.touched) {
+          <span class="error-message">Please enter a valid name</span>
+        }
+      
+        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        @if (!email.valid && email.touched) {
+          <span class="error-message">Please enter a valid email</span>
+        }
+      
         <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your Message" required></textarea>
         @if (!message.valid && message.touched) {
           <span class="error-message">Please enter a message</span>
         }
-        
+      
         <div class="privacy-policy">
           <input type="checkbox" id="privacy" name="privacy" required>
-          <label for="privacy">I've read <a href="/privacy">privacy-policy</a> and agree to the processing of my data as outlined</label>
+          <label for="privacy">I've read <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined</label>
         </div>
-        
+      
         <button type="submit" [disabled]="contactForm.invalid">Send Message :)</button>
-
+      
       </form>
+      
 
       <div class="arrow-container">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

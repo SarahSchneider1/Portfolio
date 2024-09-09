@@ -5,7 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
