@@ -1,18 +1,27 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { LandingComponentComponent } from "./landing-component/landing-component.component";
-import { AboutMeComponent } from "./about-me/about-me.component";
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { PortfolioComponent } from './portfolio//portfolio.component';
-import { ContactComponent } from "./contact/contact.component";
-import { FooterComponent } from "./footer/footer.component";
-import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "./shared/header/header.component";
+import { FooterComponent } from "./shared/footer/footer.component";
+import { FormsModule } from '@angular/forms'; 
+import { ImprintComponent } from './main-content/imprint/imprint.component';
+import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
+import { MaincontentComponent } from './main-content/main-content.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, LandingComponentComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, ContactComponent, FooterComponent, FormsModule],
+  imports: [
+    MaincontentComponent,
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    FormsModule, 
+    ImprintComponent,
+    CommonModule,
+    NgClass,
+    NgFor,
+    NgIf
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

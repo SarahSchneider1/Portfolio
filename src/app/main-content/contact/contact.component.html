@@ -1,4 +1,4 @@
-<section class="contact-section">
+<section id="contact" class="contact-section">
   <div class="headline-with-stick-wrapper">
     <div class="headline-with-stick">
       <h1>Contact</h1>
@@ -14,10 +14,9 @@
     </div>
     <div class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required>
-        <!-- @if (!name.valid && name.touched) {
-          <span class="error-message">Please enter a name</span>
-        } -->
+        <!-- <input [(ngModel)]="contactData.name" [ngClass]="{'invalid': name.invalid && name.touched}" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel">
+        <span *ngIf="name.invalid && name.touched" class="error-message">Please enter a name</span>
+         -->
         <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
         <!-- @if (!email.valid && email.touched) {
           <span class="error-message">Please enter a e-mail</span>
@@ -32,7 +31,8 @@
           <label for="privacy">I've read <a href="">privacy-policy</a> and agree to the processing of my data as outlined</label>
         </div>
         
-        <button type="submit">Send Message :)</button>
+        <button type="submit" [disabled]="contactForm.invalid">Send Message :)</button>
+
       </form>
 
       <div class="arrow-container">
