@@ -12,33 +12,37 @@
       <span>Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.</span>
       <span>Need a Frontend developer? <b>Contact me!</b></span>
     </div>
-    
+
     <div class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-
-        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel" class="form-control" [ngClass]="{'is-invalid': name.invalid && name.touched}">
-        @if (!name.valid && name.touched) {
-          <span class="error-message">Please enter a valid name</span>
-        }
-      
-        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-        @if (!email.valid && email.touched) {
-          <span class="error-message">Please enter a valid email</span>
-        }
-      
-        <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your Message" required></textarea>
-        @if (!message.valid && message.touched) {
-          <span class="error-message">Please enter a message</span>
-        }
-      
-        <div class="privacy-policy">
-          <input type="checkbox" id="privacy" name="privacy" required>
-          <label for="privacy">I've read <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined</label>
+        <div class="form-group">
+          <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel" class="form-control" [class]="{'is-invalid': name.invalid && name.touched}">
+          <span *ngIf="!name.valid && name.touched" class="error-message">Please enter a valid name</span>
         </div>
       
-        <button type="submit" [disabled]="contactForm.invalid">Send Message :)</button>
+        <div class="form-group">
+          <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" [class]="{'is-invalid': email.invalid && email.touched}">
+          <span *ngIf="!email.valid && email.touched" class="error-message">Please enter a valid email</span>
+        </div>
       
+        <div class="form-group">
+          <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your Message" required [class]="{'is-invalid': message.invalid && message.touched}"></textarea>
+          <span *ngIf="!message.valid && message.touched" class="error-message">Please enter a message</span>
+        </div>
+      
+        <div class="privacy-policy form-group">
+          <input type="checkbox" id="privacy" name="privacy" [(ngModel)]="contactData.privacy" required #checkbox="ngModel" [class]="{'is-invalid': checkbox.invalid && checkbox.touched}">
+          <label for="privacy">I've read <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined</label>
+          <span *ngIf="!checkbox.valid && checkbox.touched" class="error-message">You must agree to the privacy policy</span>
+        </div>
+      
+        <!-- Der Button ist disabled, wenn das Formular ungültig ist -->
+        <button type="submit" [disabled]="contactForm.invalid" [class.active]="!contactForm.invalid" class="submit-button">Send Message :)</button>
+      
+        <!-- Erfolgsmeldung wird angezeigt, wenn 'isSubmitted' auf 'true' gesetzt ist -->
+        <p *ngIf="isSubmitted" class="success-message">Email has been successfully sent!</p>
       </form>
+      
       
 
       <div class="arrow-container">

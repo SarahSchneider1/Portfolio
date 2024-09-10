@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -5,7 +6,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, FormsModule],
+  imports: [FormsModule, FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -17,12 +18,14 @@ export class ContactComponent {
     name: "",
     email: "",
     message: "",
-  }
+    privacy: ""
+  };
 
   mailTest = true;
+  isSubmitted: boolean = false;  
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://sarah-portfolio.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -37,8 +40,9 @@ export class ContactComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            this.isSubmitted = true;  
             ngForm.resetForm();
+            this.hideSuccessMessageAfterDelay();  
           },
           error: (error) => {
             console.error(error);
@@ -46,21 +50,26 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      this.isSubmitted = true;  
       ngForm.resetForm();
+      this.hideSuccessMessageAfterDelay();  
     }
   }
 
+  hideSuccessMessageAfterDelay() {
+    setTimeout(() => {
+      this.isSubmitted = false;  
+    }, 5000);  
+  }
 }
 
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'  // Macht das Scrollen sanft
+    behavior: 'smooth'  
   });
 }
 
-// Event-Listener hinzufügen, nachdem das DOM vollständig geladen ist
 document.addEventListener('DOMContentLoaded', () => {
   const arrow = document.querySelector('.arrow-container') as HTMLElement;
 
