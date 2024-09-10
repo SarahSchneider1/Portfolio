@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    min-height: 109.03px;
+    min-height: 109px;
     background-color: #141D2F;
     padding: 37px 100px;
     transition: all 0.2s ease;
@@ -12,7 +12,7 @@
     position: fixed; 
     top: 0; 
     left: 0; 
-    
+
     .main {
         width: 100%;
         max-width: 1600px;
@@ -27,20 +27,18 @@
                 font-size: 36px;
                 font-weight: 400;
                 display: inline-block;
-                
+
                 &::before, &::after {
                     content: '<>';
                     color: #1CDAE6;
                 }
-                
+
                 &::before {
                     content: '<';
-                    color: #1CDAE6;
                 }
-                
+
                 &::after {
                     content: '>';
-                    color: #1CDAE6;
                 }
             }
         }
@@ -59,7 +57,7 @@
                 font-weight: 400;
                 position: relative;
                 transition: color 0.2s ease;
-                
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -81,6 +79,51 @@
                         transform: translateX(0);
                     }
                 }
+            }
+        }
+
+        .burger-menu {
+            display: none;
+            font-size: 36px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    }
+}
+
+// Responsive Styles
+@media (max-width: 950px) {
+    .header {
+        min-height: 70px; /* Höhe für kleinere Bildschirme */
+        padding: 20px;
+
+        .main {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Passt sich an die neue Header-Höhe an */
+                right: 0;
+                background-color: #141D2F;
+                width: 100%;
+                padding: 20px;
+                transition: all 0.3s ease;
+
+                &.active {
+                    display: flex;
+                }
+
+                a {
+                    margin: 10px 0;
+                }
+            }
+
+            .burger-menu {
+                display: block; /* Burger-Menü sichtbar machen */
             }
         }
     }

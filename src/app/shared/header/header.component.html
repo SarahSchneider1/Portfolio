@@ -3,10 +3,13 @@
         <div class="logoheader">
             <span class="logo-text"> sarah </span>
         </div>
-        <div class="nav-links">
+        <div class="burger-menu" (click)="toggleMenu()">
+            &#9776; <!-- Burger-Symbol -->
+        </div>
+        <div class="nav-links" [class]="{'active': isMenuOpen}">
             <a href="#about-me">About me</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
-          </div>
+        </div>
     </div>
 </section>
