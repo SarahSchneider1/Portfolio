@@ -91,7 +91,7 @@
   margin-top: 30px;
   margin-right: 70px;
   align-self: center;
-  width: 105px;
+  width: 165px;
   height: 58px;
   line-height: 58px;
   border-radius: 10px;
@@ -101,7 +101,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 4;
@@ -368,6 +368,23 @@
   
   .rotated-text h2 {
     font-size: 30px;
+  }
+}
+@media (max-width: 380px) {
+  .text-container {
+    margin-right: 0;
+    margin-left: -45px;
+  }
+  .main-text h1 {
+    font-size: 30px; 
+  }
+
+  .main-text p {
+    font-size: 24px; 
+  }
+  
+  .rotated-text h2 {
+    font-size: 26px;
   }
 }
 
