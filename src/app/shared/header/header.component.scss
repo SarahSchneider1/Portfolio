@@ -80,6 +80,30 @@
                     }
                 }
             }
+
+            .lang-switch {
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+
+                .lang-link {
+                    color: #ffffff;
+                    text-decoration: none;
+                    margin: 0 10px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+
+                    &.active {
+                        color: #1CDAE6;
+                        border-bottom: 2px solid #1CDAE6;
+                    }
+
+                    &:hover {
+                        color: #1CDAE6;
+                    }
+                }
+            }
         }
 
         .burger-menu {
@@ -91,10 +115,10 @@
     }
 }
 
-// Responsive Styles
+
 @media (max-width: 950px) {
     .header {
-        min-height: 70px; /* Höhe für kleinere Bildschirme */
+        min-height: 70px; 
         padding: 20px;
 
         .main {
@@ -106,7 +130,7 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px; /* Passt sich an die neue Header-Höhe an */
+                top: 70px; 
                 right: 0;
                 background-color: #141D2F;
                 width: 100%;
@@ -123,7 +147,7 @@
             }
 
             .burger-menu {
-                display: block; /* Burger-Menü sichtbar machen */
+                display: block; 
             }
         }
     }

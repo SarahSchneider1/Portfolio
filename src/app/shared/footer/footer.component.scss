@@ -17,7 +17,8 @@ html, body {
   height: 290px;
   border-top: 4px solid #1CDAE6;
   padding: 0 50px;
-  z-index: 20;
+  z-index: 20 !important;
+  position: relative;
 
   .footer-section {
     display: flex;
@@ -33,11 +34,6 @@ html, body {
           font-size: 36px;
           font-weight: 400;
           display: inline-block;
-
-          &::before, &::after {
-            content: '<>';
-            color: #1CDAE6;
-          }
 
           &::before {
             content: '<';
@@ -100,7 +96,6 @@ html, body {
   }
 }
 
-
 @media (max-width: 900px) {
   .footer {
     flex-direction: column; 
@@ -130,7 +125,10 @@ html, body {
         align-items: center;
         margin-top: 20px;
         gap: 20px;
-        margin-right: 0;
+
+        .social-icons {
+          margin-right: 0; /* Margin für Social Icons auf 0 setzen */
+        }
       }
 
       &.copyright {
@@ -150,10 +148,12 @@ html, body {
         font-size: 26px;
       }
 
-      &.social .social-icons {
-        margin-top: 15px;
-        gap: 15px;
-        margin-right: 0 !important;
+      &.social {
+        .social-icons {
+          margin-top: 15px;
+          gap: 15px;
+          margin-right: 0 !important; /* Margin für Social Icons auf 0 setzen */
+        }
 
         a img {
           width: 22px;

@@ -1,15 +1,19 @@
 <section class="header">
     <div class="main">
         <div class="logoheader">
-            <span class="logo-text"> sarah </span>
+            <span class="logo-text">sarah</span>
         </div>
         <div class="burger-menu" (click)="toggleMenu()">
-            &#9776; <!-- Burger-Symbol -->
+            &#9776;
         </div>
         <div class="nav-links" [class]="{'active': isMenuOpen}">
             <a href="#about-me">About me</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
+            <div class="lang-switch">
+                <a href="#" class="lang-link">DE</a>
+                <a href="#" class="lang-link active">ENG</a>
+            </div>
         </div>
     </div>
 </section>

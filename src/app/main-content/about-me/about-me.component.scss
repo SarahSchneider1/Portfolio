@@ -132,6 +132,7 @@
         align-items: center; 
         margin: 0 auto; 
         padding-right: 0;
+        padding: 15px !important;
     }
 
     .left-side {
@@ -185,19 +186,5 @@
         width: 80vw;  
         height: 50vh;
         background-size: cover;
-    }
-}
-
-@media (max-width: 450px) {
-    .about-text h1 {
-        font-size: 40px !important;
-    }
-
-    .about-text p {
-        font-size: 12px !important;
-    }
-
-    .icon-text p {
-        font-size: 12px !important;
     }
 }

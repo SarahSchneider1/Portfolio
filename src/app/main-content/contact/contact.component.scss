@@ -5,7 +5,8 @@
   padding: 20px;
   margin-top: 50px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 2;
 
   .headline-with-stick-wrapper {
     width: 100%;
@@ -165,12 +166,13 @@
           font-size: 14px;
           flex-direction: row;
           justify-content: flex-start;
+          align-items: center;
 
           input[type="checkbox"] {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            width: 18px; 
+            width: 18px !important; 
             min-width: 18px;
             height: 18px;
             border: 2px solid #1CDAE6;
@@ -191,12 +193,13 @@
 
               &::before {
                 content: "";
-                width: 8px;
+                width: 7px;
                 height: 12px;
                 border: solid #1CDAE6;
                 border-width: 0 2px 2px 0;
                 position: absolute;
                 left: 3px;
+                bottom: 3px;
                 transform: rotate(45deg);
               }
             }
@@ -290,43 +293,40 @@
           transition: fill 0.3s ease;
         }
 
-        &:hover {
-          border-color: #1CDAE6;
-          fill: #1CDAE6;
-
-          svg {
-            fill: #1CDAE6;
-          }
+  
         }
       }
     }
 
-    .shadow {
-      position: absolute;
-      left: 500px;
-      transform: translateX(-50%);
-      left: 0;
-      bottom: 0;
-      width: 70%;
-      height: 70%;
-      background-image: url('/assets/img/33. Purple shadow Footer.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      z-index: -1;
-      pointer-events: none;
-    }
+    
+  }
+  .shadow {
+    position: absolute;
+    left: 10%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 70%;
+    height: 70%;
+    background-image: url('/assets/img/33. Purple shadow Footer.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -3 !important;
+    pointer-events: none;
+    display: block;
   }
 
+@media (max-width: 1299px) {
+  .shadow {
+    display: none !important;
+  }
 }
-
 @media (max-width: 1300px) {
   .content {
     display: flex;
-    flex-direction: column ; /* Stack vertically on larger screens */
+    flex-direction: column ; 
     padding: 0 !important;
   }
 
- 
 }
 
 @media (max-width: 600px) {
@@ -354,5 +354,14 @@
   .submit-button {
     width: 180px !important;
     font-size: 18px !important;
+  }
+  
+  .shadow {
+    position: absolute !important;
+    width: 50% !important;
+    height: 50% !important;
+    right: 0 !important; 
+    bottom: -10%;
+    left: 600px;
   }
 }
