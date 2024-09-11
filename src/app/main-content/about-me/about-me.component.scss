@@ -3,8 +3,8 @@
     color: white;
     position: relative;
     width: 100%;
+    z-index: 7;
 
-    
     .about-section {
         display: flex;
         justify-content: space-between;
@@ -13,6 +13,7 @@
         box-sizing: border-box;
         max-width: 1440px;
         margin: 0 auto;
+        z-index: 10;
 
         .left-side {
             flex-basis: 60%;
@@ -20,6 +21,7 @@
             flex-direction: column;
             justify-content: center;
             padding-right: 20px;
+            z-index: 10 !important;
 
             .about-text {
                 margin-bottom: 20px;
@@ -99,135 +101,103 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .aboutme {
-        background-color: rgba(20, 29, 47, 1);
-        color: white;
-    }
-
+@media (max-width: 1300px) {
     .about-section {
-        display: flex;
-        justify-content: space-between;
         padding: 30px;
-        box-sizing: border-box;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .left-side {
-        flex-basis: 65%;
-        padding-right: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     .about-text h1 {
-        font-size: 80px; /* Reduziere die Schriftgröße */
-        margin-bottom: 15px;
+        font-size: 70px !important; 
     }
 
     .about-text p {
-        font-size: 22px; /* Reduziere die Schriftgröße */
-    }
-
-    .icon-text {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-
-        img {
-            width: 50px; /* Reduziere die Icon-Größe */
-            margin-right: 10px;
-        }
-
-        p {
-            font-size: 16px; /* Reduziere die Schriftgröße */
-        }
-    }
-
-    .right-side {
-        flex-basis: 35%;
-        margin-top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .round-image {
-        width: 350px; /* Reduziere die Bildgröße */
-        height: 350px;
-        border: 4px solid #1CDAE6;
-    }
-
-    .about-shadow {
-        position: absolute;
-        top: -150px;  
-        right: -10vw;
-        width: 45vw; /* Reduziere die Schatten-Breite */
-        height: 50vh; /* Reduziere die Schatten-Höhe */
-    }
-}
-
-
-
-@media (max-width: 950px) {
-    .about-section {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .left-side {
-        flex-basis: 100%;
-        padding-right: 0;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .about-text 
-        h1 {
-        font-size: 54px !important; 
-    }
-
-    .about-text p {
-        font-size: 8px;
-    }
-
-    .icon-text {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-
-    .icon-text img {
-        width: 50px;
+        font-size: 18px; 
     }
 
     .icon-text p {
         font-size: 16px;
-        text-align: center;
+    }
+
+    .right-side .round-image {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 950px) {
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        margin: 0 auto; 
+        padding-right: 0;
+    }
+
+    .left-side {
+        flex-basis: 100%; 
+        text-align: left;
+        padding-right: 0 !important; 
+        max-width: 800px; 
     }
 
     .right-side {
-        margin-top: 20px;
-        flex-basis: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: none !important;
     }
-
-    .round-image {
-        width: 300px;
-        height: 300px;
-        border: 4px solid #1CDAE6;
-    }
-
     .about-shadow {
         position: absolute;
-        top: -150px;  
-        right: -10vw;
-        width: 50vw; 
-        height: 50vh;  
+        top: 0 !important;  
+        right: -10vw; 
+        width: 60vw !important;  
+        height: 40vh !important; 
+        background-image: url('/assets/img/30. Purple shadow about me.png');
+        background-size: cover;  
+        background-repeat: no-repeat;
+        z-index: 9;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .aboutme {
+        margin-bottom: 0;
+        margin: 0;
+    }
+    .about-text h1 {
+        font-size: 40px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .about-text p {
+        font-size: 20px !important;
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .icon-text p {
+        font-size: 16px !important;
+        margin: 0;
+        margin-bottom: 0;
+    }
+    .about-shadow {
+        top: -0px !important;  
+        right: -5vw;
+        width: 80vw;  
+        height: 50vh;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-text h1 {
+        font-size: 40px !important;
+    }
+
+    .about-text p {
+        font-size: 12px !important;
+    }
+
+    .icon-text p {
+        font-size: 12px !important;
     }
 }
