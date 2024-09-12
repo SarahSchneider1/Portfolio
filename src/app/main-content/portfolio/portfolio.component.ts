@@ -13,7 +13,7 @@ export class PortfolioComponent {
     {
       image: '/assets/img/join photo.png',
       title: 'Join',
-      techstack: 'Angular | Typescript | HTML | CSS | Firebase',
+      techstack: 'JavaScript | HTML | CSS | Firebase',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'
     },
     {
