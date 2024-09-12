@@ -6,26 +6,15 @@
         </div>
     </div>
 
-    <div id="Portfolio" class="container">
-        <div class="project reverse">
-            <img src="/assets/img/join photo.png" class="project-image">
+    <div class="container">
+        <div *ngFor="let project of projects; let i = index" 
+             [ngClass]="{'reverse': i % 2 !== 0, 'regular': i % 2 === 0}" 
+             class="project">
+            <img [src]="project.image" class="project-image">
             <div class="project-details">
-                <h2>Join</h2>
-                <span class="techstack">Angular | Typescript | HTML | CSS | Firebase</span>
-                <span class="discription">Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</span>
-                <div class="project-buttons">
-                    <button class="livetest">Live test</button>
-                    <button class="github">Github</button>
-                </div>
-            </div>
-        </div>
-  
-        <div class="project">
-            <img src="/assets/img/Sharkie photo.png" class="project-image">
-            <div class="project-details">
-                <h2>Sharkie</h2>
-                <span class="techstack">JavaScript | HTML | CSS</span>
-                <span class="discription">A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.</span>
+                <h2>{{ project.title }}</h2>
+                <span class="techstack">{{ project.techstack }}</span>
+                <span class="description">{{ project.description }}</span>
                 <div class="project-buttons">
                     <button class="livetest">Live test</button>
                     <button class="github">Github</button>
@@ -34,5 +23,4 @@
         </div>
     </div>
     <div class="portfolio-shadow"></div>
-  </section>
-  
+</section>

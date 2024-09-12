@@ -1,63 +1,23 @@
 <section id="skills" class="container">
     <div class="skillsicons">
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=html.png">
-            <span class="skillname">HTML</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=css.png">
-            <span class="skillname">CSS</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=JavScript.png">
-            <span class="skillname">JavaScript</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=Typescript.png">
-            <span class="skillname">TypeScript</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=Angular.png">
-            <span class="skillname">Angular</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=Firebase.png">
-            <span class="skillname">Firebase</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=Git.png">
-            <span class="skillname">GIT</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/API.png">
-            <span class="skillname">Rest-API</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Property 1=Scrum.png">
-            <span class="skillname">Scrum</span>
-        </div>
-        <div class="skill">
-            <img class="skillimg" src="/assets/img/skills/Material Design.png">
-            <span class="skillname">Material Design</span>
-        </div>
-        <div class="skill learning-skill">
-            <img class="skillimg" src="/assets/img/skills/Propertylearning.png">
-            <span class="skillname">Continually learning</span>
-        </div>
-        <div class="skill placeholder"></div> 
-
-        <!-- Button für mobile Ansicht -->
-        <a class="buttonskills-mobile" href="#contact">Get in touch</a>
+      <div *ngFor="let skill of skills" class="skill">
+        <img class="skillimg" [src]="skill.image" [alt]="skill.name">
+        <span class="skillname">{{ skill.name }}</span>
+      </div>
+      
+      <a class="buttonskills-mobile" href="#contact">Get in touch</a>
     </div>
-
+  
     <div class="skillscontent">
-        <div class="title-container">
-            <h1>Skills</h1>
-            <div class="long-stick"></div>
-        </div>
-        <span>I have gained experience in building projects with various frontend technologies and concepts.</span>
-        <!-- Button für Desktop-Ansicht -->
-        <a class="buttonskills" href="#contact">Get in touch</a>
+      <div class="title-container">
+        <h1>Skills</h1>
+        <div class="long-stick"></div>
+      </div>
+      <span>I have gained experience in building projects with various frontend technologies and concepts.</span>
+      
+      <a class="buttonskills" href="#contact">Get in touch</a>
     </div>
+    
     <div class="skills-shadow"></div>
-</section>
+  </section>
+  

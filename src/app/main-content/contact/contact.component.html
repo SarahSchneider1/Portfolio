@@ -36,10 +36,8 @@
           <span *ngIf="!checkbox.valid && checkbox.touched" class="error-message">You must agree to the privacy policy</span>
         </div>
       
-        <!-- Der Button ist disabled, wenn das Formular ungültig ist -->
         <button type="submit" [disabled]="contactForm.invalid" [class.active]="!contactForm.invalid" class="submit-button">Send Message :)</button>
       
-        <!-- Erfolgsmeldung wird angezeigt, wenn 'isSubmitted' auf 'true' gesetzt ist -->
         <p *ngIf="isSubmitted" class="success-message">Email has been successfully sent!</p>
       </form>
       

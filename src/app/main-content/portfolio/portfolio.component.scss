@@ -100,7 +100,7 @@
         color: #1CDAE6;
       }
 
-      .discription {
+      .description {
         display: block;
         font-size: 16px;
         font-weight: 400;
@@ -146,6 +146,7 @@
       }
     }
   }
+
 
   .portfolio-shadow {
     position: absolute;
@@ -236,15 +237,17 @@
   }
 
   button {
-    width: 140px !important;
-    height: 50px;
+    width: 130px !important;
+    height: 45px !important;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 16px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
 
     .portfolio-shadow {
       position: absolute;
-
       top: 200px;
       right: -10px;
       width: 300px ;

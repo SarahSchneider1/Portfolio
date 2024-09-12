@@ -21,7 +21,7 @@ export class ContactComponent {
     privacy: ""
   };
 
-  mailTest = true;
+  mailTest = false;
   isSubmitted: boolean = false;  
 
   post = {
