@@ -8,13 +8,11 @@
         </div>
         <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
             <a href="#about-me">{{ 'aboutme' | translate }}</a>
-
             <a href="#skills">{{ 'skills' | translate }}</a>
             <a href="#portfolio">{{ 'portfolio' | translate }}</a>
 
             <div class="lang-switch">
-                <a *ngFor="let language of languages" (click)="changeLanguages(language)" class="lang-link">{{ language | translate }}DE</a>
-                <a href="#" class="lang-link active">ENG</a>
+                <a *ngFor="let language of languages" (click)="changeLanguage(language)" class="lang-link">{{ language }}</a>
             </div>
         </div>
     </div>

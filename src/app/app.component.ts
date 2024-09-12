@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule } from '@angular/forms'; 
@@ -28,17 +28,18 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   languages = ['de', 'en'];
+  private translate = inject(TranslateService);
 
-  constructor(private translateService: TranslateService) {}
+  constructor() {}
 
   ngOnInit(): void {
     const defaultLang = localStorage.getItem('language') || 'de';
-    this.translateService.setDefaultLang(defaultLang);
-    this.translateService.use(defaultLang);
+    this.translate.setDefaultLang(defaultLang);
+    this.translate.use(defaultLang);
   }
 
-  changeLanguage(lang: string) {
-    this.translateService.use(lang);
-    localStorage.setItem('language', lang);
+  appFunctionForLanguageChange() {
+    this.translate.use('en'); // Set language to English
+    localStorage.setItem('language', 'en'); // Save the selected language
   }
 }
