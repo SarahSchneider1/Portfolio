@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslateModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
 
   http = inject(HttpClient);
+  translateService = inject(TranslateService);
 
   contactData = {
     name: "",
@@ -22,7 +25,7 @@ export class ContactComponent {
   };
 
   mailTest = false;
-  isSubmitted: boolean = false;  
+  isSubmitted: boolean = false;
 
   post = {
     endPoint: 'https://sarah-portfolio.de/sendMail.php',
@@ -35,14 +38,22 @@ export class ContactComponent {
     },
   };
 
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    const defaultLang = localStorage.getItem('language') || 'de';
+    this.translateService.setDefaultLang(defaultLang);
+    this.translateService.use(defaultLang);
+  }
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            this.isSubmitted = true;  
+            this.isSubmitted = true;
             ngForm.resetForm();
-            this.hideSuccessMessageAfterDelay();  
+            this.hideSuccessMessageAfterDelay();
           },
           error: (error) => {
             console.error(error);
@@ -50,23 +61,35 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      this.isSubmitted = true;  
+      this.isSubmitted = true;
       ngForm.resetForm();
-      this.hideSuccessMessageAfterDelay();  
+      this.hideSuccessMessageAfterDelay();
     }
   }
 
   hideSuccessMessageAfterDelay() {
     setTimeout(() => {
-      this.isSubmitted = false;  
-    }, 5000);  
+      this.isSubmitted = false;
+    }, 5000);
   }
+
+  changeLanguage(lang: string) {
+    this.translateService.use(lang);
+    localStorage.setItem('language', lang);
+  }
+
+  getPrivacyPolicyLink(): string {
+    const translatedText = this.translate.instant('privacyPolicyLink');
+    return `<a [class]="privacy-policy-a" href="/privacy">${translatedText}</a>`;
+  }
+
+
 }
 
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'  
+    behavior: 'smooth'
   });
 }
 

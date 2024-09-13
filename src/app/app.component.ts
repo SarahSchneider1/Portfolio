@@ -28,18 +28,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   languages = ['de', 'en'];
-  private translate = inject(TranslateService);
+  TranslateService = inject(TranslateService)
 
   constructor() {}
 
   ngOnInit(): void {
     const defaultLang = localStorage.getItem('language') || 'de';
-    this.translate.setDefaultLang(defaultLang);
-    this.translate.use(defaultLang);
+    // this.translate.setDefaultLang(defaultLang);
+    // this.translate.use(defaultLang);
   }
 
+
   appFunctionForLanguageChange() {
-    this.translate.use('en'); // Set language to English
-    localStorage.setItem('language', 'en'); // Save the selected language
-  }
+    this.TranslateService.use('en'); 
+    localStorage.setItem('language', 'en'); 
+}
 }

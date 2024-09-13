@@ -1,47 +1,45 @@
 <section id="contact" class="contact-section">
   <div class="headline-with-stick-wrapper">
     <div class="headline-with-stick">
-      <h1>Contact</h1>
+      <h1>{{ 'contactheadline' | translate }}</h1>
       <div class="long-stick"></div>
     </div>
   </div>
   <div class="content">
 
     <div class="leftcontent">
-      <h2>Got a problem to solve?</h2>
-      <span>Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.</span>
-      <span>Need a Frontend developer? <b>Contact me!</b></span>
+      <h2>{{ 'contactinfo' | translate }}</h2>
+      <span>{{ 'contactinfo1' | translate }}</span>
+      <span>{{ 'contactinfo2' | translate }}</span>
     </div>
 
     <div class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="form-group">
-          <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name" required #name="ngModel" class="form-control" [class]="{'is-invalid': name.invalid && name.touched}">
-          <span *ngIf="!name.valid && name.touched" class="error-message">Please enter a valid name</span>
+          <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'inputname' | translate }}" required #name="ngModel" class="form-control" [class]="{'is-invalid': name.invalid && name.touched}">
+          <span *ngIf="!name.valid && name.touched" class="error-message">{{ 'inputnameerror' | translate }}</span>
         </div>
       
         <div class="form-group">
-          <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email" required #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" [class]="{'is-invalid': email.invalid && email.touched}">
-          <span *ngIf="!email.valid && email.touched" class="error-message">Please enter a valid email</span>
+          <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ 'inputemail' | translate }}" required #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" [class]="{'is-invalid': email.invalid && email.touched}">
+          <span *ngIf="!email.valid && email.touched" class="error-message">{{ 'inputemailerror' | translate }}</span>
         </div>
       
         <div class="form-group">
-          <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your Message" required [class]="{'is-invalid': message.invalid && message.touched}"></textarea>
-          <span *ngIf="!message.valid && message.touched" class="error-message">Please enter a message</span>
+          <textarea #message="ngModel" minlength="8" [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{ 'inputmessage' | translate }}" required [class]="{'is-invalid': message.invalid && message.touched}"></textarea>
+          <span *ngIf="!message.valid && message.touched" class="error-message">{{ 'inputmessageerror' | translate }}</span>
         </div>
       
         <div class="privacy-policy form-group">
           <input type="checkbox" id="privacy" name="privacy" [(ngModel)]="contactData.privacy" required #checkbox="ngModel" [class]="{'is-invalid': checkbox.invalid && checkbox.touched}">
-          <label for="privacy">I've read <a href="/privacy"> privacy policy </a> and agree to the processing of my data as outlined</label>
-          <span *ngIf="!checkbox.valid && checkbox.touched" class="error-message">You must agree to the privacy policy</span>
+          <label for="privacy" [innerHTML]="'policy' | translate: {privacyPolicyLink: getPrivacyPolicyLink()}"></label>
+          <span *ngIf="!checkbox.valid && checkbox.touched" class="error-message">{{ 'policyerror' | translate }}</span>
         </div>
       
-        <button type="submit" [disabled]="contactForm.invalid" [class.active]="!contactForm.invalid" class="submit-button">Send Message :)</button>
+        <button type="submit" [disabled]="contactForm.invalid" [class.active]="!contactForm.invalid" class="submit-button">{{ 'sendmessage' | translate }}</button>
       
-        <p *ngIf="isSubmitted" class="success-message">Email has been successfully sent!</p>
+        <p *ngIf="isSubmitted" class="success-message">{{ 'successmessage' | translate }}</p>
       </form>
-      
-      
 
       <div class="arrow-container">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

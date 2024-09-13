@@ -217,8 +217,6 @@
 
           a {
             color: #9747FF;
-            font-size: inherit;
-            font-family: inherit;
             text-decoration: none;
             margin: 3px;
 
@@ -297,7 +295,13 @@
         }
       }
     }
-
+  .privacy-policy-a {
+    color: #9747ff;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    margin: 3px;
+  }
     
   }
   .shadow {
