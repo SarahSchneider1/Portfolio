@@ -80,9 +80,9 @@ export class ContactComponent implements OnInit {
 
   getPrivacyPolicyLink(): string {
     const translatedText = this.translate.instant('privacyPolicyLink');
-    return `<a [class]="privacy-policy-a" href="/privacy">${translatedText}</a>`;
+    return `<a class="privacy-policy-a" href="/privacy">${translatedText}</a>`;
   }
-
+  
 
 }
 

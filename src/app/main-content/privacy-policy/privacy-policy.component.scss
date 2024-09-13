@@ -4,8 +4,9 @@
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-  width: 100%;
+  max-width: 1440px;
   position: relative;
+  text-wrap: wrap;
   
 
   .back-link {

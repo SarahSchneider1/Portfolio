@@ -57,6 +57,7 @@
                 font-weight: 400;
                 position: relative;
                 transition: color 0.2s ease;
+                cursor: pointer;
 
                 &::after {
                     content: '';
@@ -93,10 +94,11 @@
                     font-size: 20px;
                     font-weight: 500;
                     transition: color 0.3s ease;
+             
 
                     &.active {
                         color: #1CDAE6;
-                        border-bottom: 2px solid #1CDAE6;
+                        // border-bottom: 2px solid #1CDAE6;
                     }
 
                     &:hover {

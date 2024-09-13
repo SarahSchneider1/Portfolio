@@ -6,7 +6,7 @@
         </div>
         
     </div>
-    <span>{{ 'portolioinfo' | translate }}</span>
+    <span class="portfolioinfo">{{ 'portolioinfo' | translate }}</span>
     <div class="container">
         <div *ngFor="let project of projects; let i = index" 
              [ngClass]="{'reverse': i % 2 !== 0, 'regular': i % 2 === 0}" 

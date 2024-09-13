@@ -5,7 +5,7 @@
         <span class="skillname">{{ skill.name }}</span>
       </div>
       
-      <a class="buttonskills-mobile" href="#contact">{{ 'getintouch' | translate }}</a>
+      <a class="buttonskills-mobile" (click)="scrollToElement('contact')">{{ 'getintouch' | translate }}</a>
     </div>
   
     <div class="skillscontent">
@@ -15,7 +15,7 @@
       </div>
       <span>{{ 'skillsinfo' | translate }}</span>
       
-      <a class="buttonskills" href="#contact">{{ 'getintouch' | translate }}</a>
+      <a class="buttonskills" (click)="scrollToElement('contact')">{{ 'getintouch' | translate }}</a>
     </div>
     
     <div class="skills-shadow"></div>

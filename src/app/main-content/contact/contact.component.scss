@@ -7,6 +7,7 @@
   position: relative;
   overflow: visible;
   z-index: 2;
+  text-wrap: wrap;
 
   .headline-with-stick-wrapper {
     width: 100%;
@@ -356,8 +357,9 @@
   }
 
   .submit-button {
-    width: 180px !important;
-    font-size: 18px !important;
+    width: 190px !important;
+    font-size: 17px !important;
+
   }
   
   .shadow {

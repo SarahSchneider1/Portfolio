@@ -6,6 +6,7 @@
   margin-top: 100px;
   width: 100%;
   position: relative;
+  text-wrap: wrap;
 
   .container {
     max-width: 1440px;
@@ -52,6 +53,13 @@
     z-index: -1;
     margin-left: calc(100% - 90px); 
     margin-right: -500px; 
+  }
+
+  .portfolioinfo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
   }
 
   .project {

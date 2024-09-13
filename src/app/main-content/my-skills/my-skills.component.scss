@@ -6,6 +6,7 @@
   color: white;
   gap: 2%;
   position: relative;
+  text-wrap: wrap;
 
   .skillsicons,
   .skillscontent {
@@ -84,7 +85,8 @@
     }
 
     .buttonskills {
-      width: 155px;
+      min-width: 200px;
+      max-width: 250px;
       height: 58px;
       line-height: 58px;
       border-radius: 10px;
@@ -94,7 +96,7 @@
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
       transition: background-color 0.3s ease, transform 0.3s ease;
       z-index: 4;
@@ -229,7 +231,8 @@
 
   .buttonskills-mobile {
     display: block !important; 
-    width: 140px;
+    min-width: 155px;
+    max-width: 250px;
     height: 50px !important;
     line-height: 48px;
     font-size: 18px;

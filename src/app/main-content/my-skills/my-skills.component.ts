@@ -37,4 +37,11 @@ export class MySkillsComponent {
     this.translateService.setDefaultLang(defaultLang); 
     this.translateService.use(defaultLang); 
   }
+
+  scrollToElement(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+    }
+  }
 }

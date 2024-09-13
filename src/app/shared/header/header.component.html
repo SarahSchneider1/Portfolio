@@ -1,18 +1,23 @@
 <section class="header">
     <div class="main">
         <div class="logoheader">
-            <span class="logo-text">sarah</span>
+            <span class="logo-text"> sarah </span>
         </div>
         <div class="burger-menu" (click)="toggleMenu()">
             &#9776;
         </div>
         <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
-            <a href="#about-me">{{ 'aboutme' | translate }}</a>
-            <a href="#skills">{{ 'skills' | translate }}</a>
-            <a href="#portfolio">{{ 'portfolio' | translate }}</a>
+            <a (click)="scrollToElement('aboutme')">{{ 'aboutme' | translate }}</a>
+            <a (click)="scrollToElement('skills')">{{ 'skills' | translate }}</a>
+            <a (click)="scrollToElement('portfolio')">{{ 'portfolio' | translate }}</a>
 
             <div class="lang-switch">
-                <a *ngFor="let language of languages" (click)="changeLanguage(language)" class="lang-link">{{ language }}</a>
+                <a *ngFor="let language of languages"
+                   (click)="changeLanguage(language)"
+                   [class.active]="language === currentLanguage"
+                   class="lang-link">
+                   {{ language }}
+                </a>
             </div>
         </div>
     </div>
