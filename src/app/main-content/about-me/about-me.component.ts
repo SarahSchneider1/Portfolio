@@ -22,4 +22,5 @@ export class AboutMeComponent implements OnInit {
     this.translateService.use(lang);
     localStorage.setItem('language', lang);
   }
+  
 }
