@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule } from '@angular/forms'; 
 import { ImprintComponent } from './main-content/imprint/imprint.component';
@@ -15,6 +15,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [
     MaincontentComponent,
     RouterOutlet,
+    RouterModule,
     FooterComponent,
     FormsModule, 
     HeaderComponent,

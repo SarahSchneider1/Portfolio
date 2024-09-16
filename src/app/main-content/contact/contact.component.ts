@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslateModule],
+  imports: [FormsModule, CommonModule, TranslateModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -73,17 +74,10 @@ export class ContactComponent implements OnInit {
     }, 5000);
   }
 
-  changeLanguage(lang: string) {
-    this.translateService.use(lang);
-    localStorage.setItem('language', lang);
-  }
-
   getPrivacyPolicyLink(): string {
     const translatedText = this.translate.instant('privacyPolicyLink');
     return `<a class="privacy-policy-a" href="/privacy">${translatedText}</a>`;
   }
-  
-
 }
 
 function scrollToTop() {

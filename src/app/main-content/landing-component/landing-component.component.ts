@@ -13,11 +13,6 @@ export class LandingComponentComponent {
 
   constructor(private translateService: TranslateService) {}
 
-  changeLanguage(lang: string) {
-    this.translateService.use(lang); 
-    localStorage.setItem('language', lang); 
-  }
-
   ngOnInit(): void {
     const defaultLang = localStorage.getItem('language') || 'de'; 
     this.translateService.setDefaultLang(defaultLang);

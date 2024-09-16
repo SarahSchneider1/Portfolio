@@ -26,7 +26,7 @@
   .headline-with-sticks {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
     max-width: none;
     padding: 0 40px;
@@ -37,13 +37,12 @@
     font-size: 90px;
     font-weight: 700;
     white-space: nowrap;
-    margin:0;
+    margin: 0;
   }
 
   .long-stick {
     height: 4px;
     width: 100%;
-    max-width: none;
     background-color: #9747FF;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -51,8 +50,8 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: -1;
-    margin-left: calc(100% - 90px); 
-    margin-right: -500px; 
+    margin-left: calc(100% - 90px);
+    margin-right: -500px;
   }
 
   .portfolioinfo {
@@ -60,6 +59,8 @@
     justify-content: center;
     text-align: center;
     font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .project {
@@ -74,7 +75,6 @@
 
       .project-details {
         text-align: right;
-  
 
         .project-buttons {
           justify-content: flex-end;
@@ -120,16 +120,18 @@
         gap: 50px;
         justify-content: flex-start;
 
-        button {
-          width: 155px;
+        a {
+          width: 105px;
           height: 58px;
           line-height: 58px;
           border-radius: 10px;
           padding: 0 30px;
           font-size: 20px;
           font-weight: 400;
-          border: none;
-          cursor: pointer;
+          text-decoration: none;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
           transition: background-color 0.6s ease, color 0.6s ease;
 
           &.livetest {
@@ -148,13 +150,13 @@
 
             &:hover {
               background-color: #1CDAE6;
+              color: white;
             }
           }
         }
       }
     }
   }
-
 
   .portfolio-shadow {
     position: absolute;
@@ -170,7 +172,7 @@
   }
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1500px) {
   .project-details {
     max-width: 570px;
     padding: 0;
@@ -181,7 +183,7 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 20px;
     padding: 0 !important;
   }
 
@@ -195,13 +197,11 @@
     max-width: 250px !important;
     width: 100% !important;
     height: auto;
-    max-width: 100%; 
-    margin-bottom: 20px; 
-    max-width: 800px !important;
+    margin-bottom: 20px;
   }
 
   .project-details {
-    text-align: center !important; 
+    text-align: center !important;
     width: 100% !important;
     padding: 20px;
   }
@@ -209,76 +209,55 @@
   .project-buttons {
     display: flex;
     justify-content: center !important;
-    gap: 10px; 
-  }
-  .project-buttons {
-    display: flex;
-    gap: 30px !important;
+    gap: 10px;
   }
 
   .project.reverse {
-    flex-direction: column !important; 
+    flex-direction: column !important;
   }
-  
 }
 
 @media (max-width: 600px) {
-  .project-details {
-
-    width: 400px !important;
-  }
   h1 {
     font-size: 60px !important;
   }
+
   .long-stick {
-    margin-right: -370px !important; 
+    margin-right: -370px !important;
+  }
+
+  .project-details {
+    width: 400px !important;
+  }
+
+  .project-image {
+    max-width: 800px !important;
   }
 
   .techstack {
     font-size: 18px !important;
-
   }
 
-  .discription {
-    font-weight: 400;
-    margin-bottom: 30px;
-  }
-
-  button {
-    width: 130px !important;
+  a {
+    width: 150px !important;
     height: 45px !important;
-    border-radius: 10px;
-    font-size: 16px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+    font-size: 15px !important;
+  }
 
-    .portfolio-shadow {
-      position: absolute;
-      top: 200px;
-      right: -10px;
-      width: 300px ;
-      height: 400px !important;
-      z-index: -1;
-    }
+  .portfolio-shadow {
+    top: 200px;
+    right: -10px;
+    width: 300px;
+    height: 400px !important;
+  }
 }
 
- @media (max-width: 450px) {
+@media (max-width: 450px) {
   .project-details {
     width: 300px !important;
   }
 
-  .long-stick {
-    margin-right: -370px !important; 
-  }
-
   .techstack {
     font-size: 18px !important;
-  }
-
-  .discription {
-    font-weight: 400;
-    margin-bottom: 30px;
   }
 }

@@ -18,7 +18,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     const defaultLang = localStorage.getItem('language') || 'de';
-    this.currentLanguage = defaultLang;  // Setze die aktuelle Sprache beim Initialisieren
+    this.currentLanguage = defaultLang;  
     this.translateService.setDefaultLang(defaultLang);
     this.translateService.use(defaultLang);
   }
@@ -35,7 +35,7 @@ export class HeaderComponent {
   }
 
   changeLanguage(lang: string) {
-    this.currentLanguage = lang;  // Speichere die ausgewählte Sprache
+    this.currentLanguage = lang;  
     this.translateService.use(lang);
     localStorage.setItem('language', lang);
   }

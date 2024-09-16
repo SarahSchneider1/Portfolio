@@ -23,35 +23,16 @@ export class PortfolioComponent implements OnInit {
     this.projects = [
       {
         image: '/assets/img/join photo.png',
-        title: 'Join', 
+        title: 'Join',
         techstack: 'JavaScript | HTML | CSS | Firebase',
         description: 'joininfo' 
       },
       {
         image: '/assets/img/Sharkie photo.png',
-        title: 'Sharkie', 
+        title: 'Sharkie',
         techstack: 'JavaScript | HTML | CSS',
         description: 'sharkieinfo' 
       }
     ];
-
-    this.loadTranslations();
-  }
-
-  private loadTranslations() {
-    this.projects.forEach(project => {
-      this.translateService.get(project.title).subscribe(translatedTitle => {
-        project.title = translatedTitle;
-      });
-
-      this.translateService.get(project.description).subscribe(translatedDescription => {
-        project.description = translatedDescription;
-      });
-    });
-  }
-
-  changeLanguage(lang: string) {
-    this.translateService.use(lang);
-    localStorage.setItem('language', lang);
   }
 }
