@@ -32,7 +32,11 @@
       
         <div class="privacy-policy form-group">
           <input type="checkbox" id="privacy" name="privacy" [(ngModel)]="contactData.privacy" required #checkbox="ngModel" [class]="{'is-invalid': checkbox.invalid && checkbox.touched}">
-          <label for="privacy" [innerHTML]="'policy' | translate: {privacyPolicyLink: getPrivacyPolicyLink()}"></label>
+            <div>{{ 'policy1' | translate }}
+              <a [routerLink]="['/privacy']">{{ 'privacyPolicyLink' | translate }}</a>
+              {{ 'policy2' | translate }}
+            </div>
+          <label for="privacy"></label>
           <span *ngIf="!checkbox.valid && checkbox.touched" class="error-message">{{ 'policyerror' | translate }}</span>
         </div>
       

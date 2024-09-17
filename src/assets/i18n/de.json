@@ -10,7 +10,7 @@
   "aboutmeinfo2": "Programmieren ist für mich vergleichbar mit einer Wanderung in den Bergen: Mit einem klaren Ziel vor Augen kann der Weg manchmal anspruchsvoll sein, doch der Blick vom Gipfel – das erreichte Ergebnis – ist unbezahlbar. Jede Schwierigkeit ist ein Felsen, den ich überwinde, und genau dieser kreative Prozess spornt mich immer wieder an.",
   "skillsinfo": "Ich habe Erfahrung in der Erstellung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt.",
   "getintouch": "Kontaktieren Sie mich",
-  "portolioinfo":"Ich habe Erfahrung in der Erstellung von Projekten mit verschiedenen Frontend-Technologien und Konzepten gesammelt.",
+  "portolioinfo":"Entdecken Sie ein Teil meiner Arbeit hier - Interagieren Sie mit den Projekten um meine Fähigkeiten in Aktion zu sehen.",
   "joininfo": "Ein Taskmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, und weisen Sie Benutzer und Kategorien zu.",
   "sharkieinfo": "Ein einfaches Jump-and-Run-Spiel, das auf objektorientierte Programmierung basiert. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen.",
   "contactheadline": "Kontakt",
@@ -23,9 +23,11 @@
   "inputemailerror": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
   "inputmessage": "Ihre Nachricht",
   "inputmessageerror": "Bitte geben Sie eine Nachricht ein",
-  "policy": "Ich habe die {{privacyPolicyLink}} gelesen und stimme der Verarbeitung meiner Daten gemäß diesen Bestimmungen zu.",
-  "policyerror": "Du musst die Datenschutzerklärung akzeptieren",
+  "policy1": "Ich habe die",
   "privacyPolicyLink": "Datenschutzerklärung",
+  "policy2": "und stimme der Verarbeitung meiner Daten gemäß diesen Bestimmungen zu.",
+  "policyerror": "Sie müssen die Datenschutzerklärung akzeptieren",
   "sendmessage": "Nachricht senden :)",
+  "successmessage":"Danke, Ihre Nachricht wurde versendet :) ",
   "imprint": "Impressum"
 }

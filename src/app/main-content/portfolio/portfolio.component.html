@@ -6,23 +6,19 @@
         </div>
     </div>
 
-    <span class="portfolioinfo">{{ 'portfolioinfo' | translate }}</span>
+    <span class="portfolioinfo">{{ 'portolioinfo' | translate }}</span>
     
     <div class="container">
-        <div *ngFor="let project of projects; let i = index" 
-             [ngClass]="{'reverse': i % 2 !== 0, 'regular': i % 2 === 0}" 
-             class="project">
+        <div *ngFor="let project of projects; let i = index" [ngClass]="{'reverse': i % 2 !== 0, 'regular': i % 2 === 0}" class="project">
             <img [src]="project.image" class="project-image">
             <div class="project-details">
                 <h2>{{ project.title }}</h2>
                 <span class="techstack">{{ project.techstack }}</span>
-                
-                <!-- Hier die Beschreibung direkt mit dem Translate-Filter -->
                 <span class="description">{{ project.description | translate }}</span>
-
+        
                 <div class="project-buttons">
-                    <a [href]="project.liveTestUrl" target="_blank" class="livetest">Live test</a>
-                    <a [href]="project.githubUrl" target="_blank" class="github">Github</a>
+                    <a target="_blank" (click)="navigateToExternalUrl(project.liveTestLink)" class="livetest">Live test</a>
+                    <a target="_blank" (click)="navigateToExternalUrl(project.githubLink)"  class="github">Github</a>
                 </div>
             </div>
         </div>
