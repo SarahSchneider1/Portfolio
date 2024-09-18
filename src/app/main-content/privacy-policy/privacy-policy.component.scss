@@ -1,124 +1,126 @@
 .privacy-policy {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-  max-width: 1440px;
-  position: relative;
-  text-wrap: wrap;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 1440px;
+    margin-left: auto; 
+    margin-right: auto; 
+    position: relative;
+    padding: 20px; 
+    box-sizing: border-box; 
+  }
   
-
   .back-link {
     position: absolute;
-    top: -30px;
+    top: 10px; 
     left: 50%;
     transform: translateX(-50%) rotate(180deg);
-    font-size: 32px;
+    font-size: 48px; 
     color: #1CDAE6;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s ease;
-    margin-bottom: 100px;
-
-    
-    &:hover {
-      text-decoration: none;
-      transform: translateX(-50%) scale(1.5) rotate(180deg); 
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 100; 
+  }
+  
+  .back-link:hover {
+    text-decoration: none;
+    transform: translateX(-50%) scale(1.5) rotate(180deg); 
+  }
+  
+  .container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto; 
+    overflow: visible;
+    text-wrap: wrap;
+  }
+  
+  .headline-with-sticks-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .headline-with-sticks {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 20px;
+    white-space: nowrap;
+    text-align: start;
+    color: #1CDAE6;
+    word-wrap: break-word;
+    margin-top: 100px; 
+  }
+  
+  a {
+    color: #1CDAE6;
+  }
+  
+  h2, h3, h4 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 30px; 
+      margin: 0 20px;
+      white-space: normal; 
+      text-align: center; 
+      margin-top: 90px; 
     }
   }
-
-  .container {
-      max-width: 1440px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0 20px;
-      overflow: visible;
-  }
-
-  .headline-with-sticks-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      max-width: 1440px;
-  }
-
-  .headline-with-sticks {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start; 
-      width: 100%;
-      max-width: none;
-      position: relative;
-  }
-
-  h1 {
-      font-size: 38px;
-      font-weight: 700;
-      margin: 0; 
-      padding: 0 20px;
-      white-space: nowrap; 
-      text-align: start;
-      color: #1CDAE6; 
-      word-wrap: break-word; 
-  }
-
-  .short-stick,
-  .long-stick {
-      display: none;
-  }
-
-  h2, h3, h4 {
-      color: white;
-      margin-bottom: 20px;
-  }
-
-  p {
-      margin-bottom: 20px;
-      line-height: 1.5;
-  }
-
-  @media (max-width: 768px) {
-      h1 {
-          font-size: 30px; 
-          margin: 0 20px;
-          white-space: normal; 
-          text-align: center; 
-      }
-  }
-
+  
   @media (max-width: 480px) {
-      h1 {
-          font-size: 34px; 
-          margin: 0 10px;
-          margin-top: 30px;
-      }
-
-      .back-link {
-          font-size: 16px;
-          top: -15px;
-          left: 50%;
-          transform: translateX(-50%) rotate(180deg);
-      }
-
-      .container {
-          padding: 0 10px;
-      }
-
-      h2 {
-          font-size: 28px;
-      }
-
-      h3 {
-          font-size: 22px;
-      }
-
-      h4 {
-          font-size: 18px;
-      }
-
-      p {
-          font-size: 14px;
-      }
+    h1 {
+      font-size: 34px; 
+      margin: 0 10px;
+      margin-top: 80px; 
+    }
+  
+    .back-link {
+      font-size: 24px; 
+      top: 10px; 
+      left: 50%;
+      transform: translateX(-50%) rotate(180deg);
+    }
+  
+    .container {
+      padding: 0 10px;
+    }
+  
+    h2 {
+      font-size: 28px;
+    }
+  
+    h3 {
+      font-size: 22px;
+    }
+  
+    h4 {
+      font-size: 18px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
   }
-}
+  

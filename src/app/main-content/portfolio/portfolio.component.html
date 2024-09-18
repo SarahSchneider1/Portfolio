@@ -7,18 +7,32 @@
     </div>
 
     <span class="portfolioinfo">{{ 'portolioinfo' | translate }}</span>
-    
+
     <div class="container">
-        <div *ngFor="let project of projects; let i = index" [ngClass]="{'reverse': i % 2 !== 0, 'regular': i % 2 === 0}" class="project">
-            <img [src]="project.image" class="project-image">
+        <!-- Join Project -->
+        <div class="project reverse">
+            <img src="/assets/img/join photo.png" class="project-image">
             <div class="project-details">
-                <h2>{{ project.title }}</h2>
-                <span class="techstack">{{ project.techstack }}</span>
-                <span class="description">{{ project.description | translate }}</span>
-        
+                <h2>Join</h2>
+                <span class="techstack">Angular | Typescript | HTML | CSS | Firebase</span>
+                <span class="description">{{ 'joininfo' | translate }}</span>
                 <div class="project-buttons">
-                    <a target="_blank" (click)="navigateToExternalUrl(project.liveTestLink)" class="livetest">Live test</a>
-                    <a target="_blank" (click)="navigateToExternalUrl(project.githubLink)"  class="github">Github</a>
+                    <a target="_blank" href="https://join.sarah-portfolio.de/" class="livetest">Live Test</a>
+                    <a target="_blank" href="https://github.com/SarahSchneider1/Join360" class="github">Github</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sharkie Project -->
+        <div class="project">
+            <img src="/assets/img/Sharkie photo.png" class="project-image">
+            <div class="project-details">
+                <h2>Sharkie</h2>
+                <span class="techstack">JavaScript | HTML | CSS</span>
+                <span class="description">{{ 'sharkieinfo' | translate }}</span>
+                <div class="project-buttons">
+                    <a target="_blank" href="https://sharkie.sarah-portfolio.de" class="livetest">Live Test</a>
+                    <a target="_blank" href="https://github.com/SarahSchneider1/Sharkie-the-Game" class="github">Github</a>
                 </div>
             </div>
         </div>

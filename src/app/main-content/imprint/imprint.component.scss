@@ -1,45 +1,44 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
 }
 
+.main-content {
+  flex: 1; 
+  max-width: 1440px; 
+  margin: 0 auto; 
+}
 
 .impressum {
-  flex: 1; 
+  padding-top: 120px !important; 
+  padding-bottom: 70px !important;
+  height: auto;
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
   color: #ffffff;
+  position: relative; 
 }
 
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 20px;
-  font-size: 32px;
+.impressum .back-link {
+  position: absolute;
+  top: 15%; 
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  font-size: 48px;
   color: #1CDAE6;
   text-decoration: none;
   font-weight: bold;
-  transition: transform 0.3s ease;
-  transform: rotate(180deg);
-  
-  
-  &:hover {
-    text-decoration: none;
-    transform: scale(1.5) rotate(180deg); 
-  }
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1000; 
 }
 
+.impressum .back-link:hover {
+  text-decoration: none;
+  transform: translateX(-50%) scale(1.5) rotate(180deg);
+}
 
 .impressum h1 {
   font-size: 24px;
@@ -54,21 +53,14 @@ html, body {
   margin-bottom: 10px;
 }
 
-
 .impressum p {
   font-size: 16px;
   line-height: 1.5;
   margin: 10px 0;
 }
 
-
 a {
   color: #1CDAE6;
-  text-decoration: none;
-}
-
-
-.impressum a {
   text-decoration: none;
 }
 
@@ -77,16 +69,43 @@ a {
 }
 
 
-@media (max-width: 320px) {
-  .h1 {
-    font-size: 20px;
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
   }
 
-  .impressum h2 {
-    font-size: 18px;
+  .footer-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px;
   }
 
-  .impressum p {
-    font-size: 14px;
+  .footer-section {
+    &.logo-impressum .logoheader .logo-text {
+      font-size: 26px;
+    }
+
+    &.social {
+      .social-icons {
+        margin-top: 15px;
+        gap: 15px;
+        margin-right: 0 !important;
+      }
+
+      a img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &.copyright {
+      font-size: 16px;
+    }
   }
 }

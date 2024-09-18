@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Location } from '@angular/common';  
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [RouterModule, CommonModule  ],
+  imports: [RouterModule, CommonModule],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrls: ['./privacy-policy.component.scss'] 
 })
 export class PrivacyPolicyComponent {
+  
+  constructor(private location: Location) {} 
 
+  goBack() {
+    this.location.back(); 
+  }
 }

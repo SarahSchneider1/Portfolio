@@ -8,89 +8,98 @@ html, body {
   display: flex;
   flex-direction: column;
   color: white;
+  border-top: 4px solid #1CDAE6;
 }
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   height: 290px;
-  border-top: 4px solid #1CDAE6;
-  padding: 0 50px;
-  z-index: 20 !important;
+  width: 100%;
+  max-width: 1440px; 
+  margin: 0 auto; 
+  box-sizing: border-box;
   position: relative;
+  z-index: 20 !important;
+}
 
-  .footer-section {
-    display: flex;
-    flex-direction: column;
+.footer-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
-    &.logo-impressum {
-      align-items: flex-start;
-      margin-left: 55px;
+.footer-section.logo-impressum {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  margin-left: 55px;
 
-      .logoheader {
-        .logo-text {
-          color: #ffffff;
-          font-size: 36px;
-          font-weight: 400;
-          display: inline-block;
-
-          &::before {
-            content: '<';
-            color: #1CDAE6;
-          }
-
-          &::after {
-            content: '>';
-            color: #1CDAE6;
-          }
-        }
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-        text-align: left;
-        font-size: 16px;
-        font-weight: 400;
-        margin-top: 20px;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    &.copyright {
-      font-size: 23px;
+  .logoheader {
+    .logo-text {
+      color: #ffffff;
+      font-size: 36px;
       font-weight: 400;
-      align-items: center;
+      display: inline-block;
+      margin-top: 20px;
+
+      &::before {
+        content: '<';
+        color: #1CDAE6;
+      }
+
+      &::after {
+        content: '>';
+        color: #1CDAE6;
+      }
     }
+  }
 
-    &.social {
-      align-items: center;
+  a {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px; 
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
-      .social-icons {
-        display: flex;
-        align-items: center;
-        gap: 35px; 
-        margin-right: 40px;
+.footer-section.copyright {
+  font-size: 23px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        a {
-          img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
+.footer-section.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-            &:hover {
-              width: 35px;
-              height: 35px;
-              transform: scale(1.2); 
-            }
-          }
-        }
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-right: 20px; 
+    
+    a img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        width: 35px;
+        height: 35px;
+        transform: scale(1.2);
       }
     }
   }
@@ -98,72 +107,69 @@ html, body {
 
 @media (max-width: 900px) {
   .footer {
-    flex-direction: column; 
+    flex-direction: column;
     padding: 20px;
     height: auto;
+  }
 
-    .footer-section {
-      margin-bottom: 20px;
-      text-align: center;
+  .footer-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-      &.logo-impressum {
-        align-items: center;
-        margin-left: 0;
+  .footer-section.logo-impressum {
+    align-items: center;
+    margin-left: 0;
 
-        .logoheader .logo-text {
-          font-size: 30px;
-          margin-bottom: 10px;
-        }
-
-        a {
-          margin-top: 0;
-          font-size: 16px;
-        }
-      }
-
-      &.social {
-        align-items: center;
-        margin-top: 20px;
-        gap: 20px;
-
-        .social-icons {
-          margin-right: 0; /* Margin für Social Icons auf 0 setzen */
-        }
-      }
-
-      &.copyright {
-        font-size: 18px;
-        margin-top: 10px;
-      }
+    .logoheader .logo-text {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
+
+    a {
+      margin-top: 0;
+      font-size: 16px;
+    }
+  }
+
+  .footer-section.social {
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+
+    .social-icons {
+      margin-right: 0;
+    }
+  }
+
+  .footer-section.copyright {
+    font-size: 18px;
+    margin-top: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
     padding: 10px;
+  }
 
-    .footer-section {
-      &.logo-impressum .logoheader .logo-text {
-        font-size: 26px;
-      }
+  .footer-section.logo-impressum .logoheader .logo-text {
+    font-size: 26px;
+  }
 
-      &.social {
-        .social-icons {
-          margin-top: 15px;
-          gap: 15px;
-          margin-right: 0 !important; /* Margin für Social Icons auf 0 setzen */
-        }
+  .footer-section.social .social-icons {
+    margin-top: 15px;
+    gap: 15px;
+    margin-right: 0 !important;
+  }
 
-        a img {
-          width: 22px;
-          height: 22px;
-        }
-      }
+  .footer-section.social a img {
+    width: 22px;
+    height: 22px;
+  }
 
-      &.copyright {
-        font-size: 16px;
-      }
-    }
+  .footer-section.copyright {
+    font-size: 16px;
   }
 }
