@@ -1,8 +1,3 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -13,12 +8,12 @@ html, body {
 
 .footer {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   height: 290px;
   width: 100%;
-  max-width: 1440px; 
-  margin: 0 auto; 
+  max-width: 1440px;
+  margin: 0 auto;
   box-sizing: border-box;
   position: relative;
   z-index: 20 !important;
@@ -32,9 +27,8 @@ html, body {
 
 .footer-section.logo-impressum {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
-  margin-left: 55px;
 
   .logoheader {
     .logo-text {
@@ -62,8 +56,8 @@ html, body {
     text-align: left;
     font-size: 16px;
     font-weight: 400;
-    margin-top: 10px; 
-    
+    margin-top: 10px;
+
     &:hover {
       text-decoration: underline;
     }
@@ -87,21 +81,36 @@ html, body {
     display: flex;
     align-items: center;
     gap: 35px;
-    margin-right: 20px; 
-    
-    a img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    margin-right: 20px;
 
-      &:hover {
-        width: 35px;
-        height: 35px;
-        transform: scale(1.2);
-      }
+    .icon-container {
+      display: inline-block; 
+      width: 30px; 
+      height: 30px; 
     }
+
+    a img {
+      width: 100%; 
+      height: 100%; 
+      transition: transform 0.3s ease;
+      display: block; 
+    }
+
+    a:hover img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (max-width: 1650px) {
+  .footer-section.logo-impressum {
+    margin-left: 110px;
+  }
+}
+
+@media (max-width: 950px) {
+  .footer-section.logo-impressum {
+    margin-left: 20px;
   }
 }
 

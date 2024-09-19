@@ -1,5 +1,5 @@
 #skills {
-  scroll-margin-top: 206px;
+  scroll-margin-top: 156px;
 }
 .container {
   display: flex;
@@ -266,6 +266,9 @@
 }
 
 @media (max-width: 600px) {
+  .container {
+    scroll-margin-top: -0px !important;
+  }
   .skillsicons {
     gap: 5px; 
     max-width: 100%; 

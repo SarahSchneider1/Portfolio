@@ -1,6 +1,6 @@
 <div id="skills">
 <section class="container">
-    <div class="skillsicons">
+    <div data-aos="fade-right" data-aos-duration="1300" class="skillsicons">
       <div *ngFor="let skill of skills" class="skill">
         <img class="skillimg" [src]="skill.image" [alt]="skill.name">
         <span class="skillname">{{ skill.name }}</span>
@@ -9,7 +9,7 @@
       <a class="buttonskills-mobile" (click)="scrollToElement('contact')">{{ 'getintouch' | translate }}</a>
     </div>
   
-    <div class="skillscontent">
+    <div data-aos="fade-left" data-aos-duration="1300"  class="skillscontent">
       <div class="title-container">
         <h1>Skills</h1>
         <div class="long-stick"></div>

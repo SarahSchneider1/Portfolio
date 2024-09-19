@@ -1,25 +1,24 @@
 <section class="header">
-    <div class="main">
-      <div class="logoheader">
-        <span class="logo-text"> sarah </span>
-      </div>
-      <div class="burger-menu" (click)="toggleMenu()">
-        &#9776;
-      </div>
-      <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
-        <a (click)="scrollToElement('aboutme'); toggleMenu()">{{ 'aboutme' | translate }}</a>
-        <a (click)="scrollToElement('skills'); toggleMenu()">{{ 'skills' | translate }}</a>
-        <a (click)="scrollToElement('portfolio'); toggleMenu()">{{ 'portfolio' | translate }}</a>
-  
-        <div class="lang-switch">
-          <a *ngFor="let language of languages"
-             (click)="changeLanguage(language); toggleMenu()"
-             [class.active]="language === currentLanguage"
-             class="lang-link">
-             {{ language }}
-          </a>
-        </div>
+  <div class="main">
+    <div class="logoheader">
+      <a routerLink="/" class="logo-text"> sarah </a>
+    </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+      &#9776;
+    </div>
+    <div class="nav-links" [ngClass]="{'active': isMenuOpen}">
+      <a routerLink="/" fragment="aboutme" (click)="scrollToElement('aboutme'); toggleMenu()">{{ 'aboutme' | translate }}</a>
+      <a routerLink="/" fragment="skills" (click)="scrollToElement('skills'); toggleMenu()">{{ 'skills' | translate }}</a>
+      <a routerLink="/" fragment="portfolio" (click)="scrollToElement('portfolio'); toggleMenu()">{{ 'portfolio' | translate }}</a>
+
+      <div class="lang-switch">
+        <a *ngFor="let language of languages"
+           (click)="changeLanguage(language); toggleMenu()"
+           [class.active]="language === currentLanguage"
+           class="lang-link">
+           {{ language }}
+        </a>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

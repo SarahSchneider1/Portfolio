@@ -8,6 +8,8 @@ import { MaincontentComponent } from './main-content/main-content.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './shared/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import AOS from 'aos'; // Default-Import
+
 
 @Component({
   selector: 'app-root',
@@ -35,13 +37,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const defaultLang = localStorage.getItem('language') || 'de';
+    AOS.init(); // Initialisiert AOS
     // this.translate.setDefaultLang(defaultLang);
     // this.translate.use(defaultLang);
   }
 
-
   appFunctionForLanguageChange() {
     this.TranslateService.use('en'); 
     localStorage.setItem('language', 'en'); 
-}
+  }
 }

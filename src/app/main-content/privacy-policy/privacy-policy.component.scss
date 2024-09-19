@@ -13,24 +13,6 @@
     box-sizing: border-box; 
   }
   
-  .back-link {
-    position: absolute;
-    top: 10px; 
-    left: 50%;
-    transform: translateX(-50%) rotate(180deg);
-    font-size: 48px; 
-    color: #1CDAE6;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s ease, color 0.3s ease;
-    z-index: 100; 
-  }
-  
-  .back-link:hover {
-    text-decoration: none;
-    transform: translateX(-50%) scale(1.5) rotate(180deg); 
-  }
-  
   .container {
     max-width: 1440px;
     width: 100%;
@@ -57,12 +39,11 @@
     font-size: 38px;
     font-weight: 700;
     margin: 0;
-    padding: 0 20px;
     white-space: nowrap;
     text-align: start;
     color: #1CDAE6;
     word-wrap: break-word;
-    margin-top: 100px; 
+    margin-top: 10px; 
   }
   
   a {

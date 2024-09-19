@@ -7,13 +7,13 @@
   </div>
   <div class="content">
 
-    <div class="leftcontent">
+    <div data-aos="fade-right" data-aos-duration="2000" class="leftcontent">
       <h2>{{ 'contactinfo' | translate }}</h2>
       <span>{{ 'contactinfo1' | translate }}</span>
       <span>{{ 'contactinfo2' | translate }}</span>
     </div>
 
-    <div class="rightcontent">
+    <div data-aos="fade-left" data-aos-duration="2000" class="rightcontent">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="form-group">
           <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'inputname' | translate }}" required #name="ngModel" class="form-control" [class]="{'is-invalid': name.invalid && name.touched}">

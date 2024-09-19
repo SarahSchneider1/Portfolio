@@ -7,7 +7,7 @@
   width: 100%;
   position: relative;
   text-wrap: wrap;
-  scroll-margin-top: 180px;
+  scroll-margin-top: 130px;
 
   .container {
     max-width: 1440px;
@@ -219,6 +219,9 @@
 }
 
 @media (max-width: 600px) {
+  .Portfolio {
+    scroll-margin-top: 100px;
+  }
   h1 {
     font-size: 60px !important;
   }

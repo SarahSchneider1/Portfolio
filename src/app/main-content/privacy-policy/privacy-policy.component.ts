@@ -14,7 +14,4 @@ export class PrivacyPolicyComponent {
   
   constructor(private location: Location) {} 
 
-  goBack() {
-    this.location.back(); 
-  }
 }
