@@ -284,6 +284,7 @@
         cursor: pointer;
         transition: border-color 0.3s ease;
         background-color: transparent;
+        margin-right: 150px;
 
         svg {
           fill: white;
@@ -334,6 +335,12 @@
 
 }
 
+@media (max-width: 900px) {
+  .arrow-container {
+    margin-left: 100px;
+  }
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 60px !important;
@@ -374,5 +381,8 @@
   
   .error-message {
     font-size: 12px !important;
+  }
+  .arrow-container {
+    margin-right: 0 !important;
   }
 }

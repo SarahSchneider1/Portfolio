@@ -6,6 +6,9 @@
     z-index: 7;
     text-wrap: wrap;
 
+    /* Globales Scroll Margin Top hinzufügen */
+    scroll-margin-top: 0; /* Standardwert */
+
     .about-section {
         display: flex;
         justify-content: space-between;
@@ -92,12 +95,12 @@
 
     .about-shadow {
         position: absolute;
-        top: -200px;  
+        top: -200px;
         right: -20vw;
-        width: 40vw; 
-        height: 60vh;  
+        width: 40vw;
+        height: 60vh;
         background-image: url('/assets/img/30. Purple shadow about me.png');
-        background-size: contain;  
+        background-size: contain;
         background-repeat: no-repeat;
         z-index: 9;
     }
@@ -109,11 +112,11 @@
     }
 
     .about-text h1 {
-        font-size: 70px !important; 
+        font-size: 70px !important;
     }
 
     .about-text p {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     .icon-text p {
@@ -127,46 +130,57 @@
 }
 
 @media (max-width: 950px) {
+    .aboutme {
+        scroll-margin-top: 80px; 
+    }
+
     .about-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; 
-        margin: 0 auto; 
+        align-items: center;
+        margin: 0 auto;
         padding-right: 0;
         padding: 15px !important;
     }
 
     .left-side {
-        flex-basis: 100%; 
+        flex-basis: 100%;
         text-align: left;
-        padding-right: 0 !important; 
-        max-width: 800px; 
+        padding-right: 0 !important;
+        max-width: 800px;
     }
 
     .right-side {
         display: none !important;
     }
+
     .about-shadow {
         position: absolute;
-        top: 0 !important;  
-        right: -10vw; 
-        width: 60vw !important;  
-        height: 40vh !important; 
+        top: 0 !important;
+        right: -10vw;
+        width: 60vw !important;
+        height: 40vh !important;
         background-image: url('/assets/img/30. Purple shadow about me.png');
-        background-size: cover;  
+        background-size: cover;
         background-repeat: no-repeat;
         z-index: 9;
     }
+}
 
+@media (max-width: 700px) {
+    .left-side {
+        scroll-margin-top: 150px !important;
+    }
 }
 
 @media (max-width: 600px) {
     .aboutme {
         margin-bottom: 0;
         margin: 0;
-        scroll-margin-top: 80px;
+        scroll-margin-top: 80px; 
     }
+
     .about-text h1 {
         font-size: 40px !important;
         margin-bottom: 20px !important;
@@ -183,10 +197,11 @@
         margin: 0;
         margin-bottom: 0;
     }
+
     .about-shadow {
-        top: -0px !important;  
+        top: -0px !important;
         right: -5vw;
-        width: 80vw;  
+        width: 80vw;
         height: 50vh;
         background-size: cover;
     }

@@ -134,6 +134,8 @@
         width: 100%;
         padding: 20px;
         transition: all 0.3s ease;
+        backdrop-filter: blur(300px);
+        opacity: 0.8;
     }
 
     .header .main .nav-links.active {

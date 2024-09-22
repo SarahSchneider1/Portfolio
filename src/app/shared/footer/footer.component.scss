@@ -106,11 +106,18 @@
   .footer-section.logo-impressum {
     margin-left: 110px;
   }
+
+  .social-icons {
+    margin-right: 80px !important;
+  }
 }
 
 @media (max-width: 950px) {
   .footer-section.logo-impressum {
     margin-left: 20px;
+  }
+  .social-icons {
+    margin-right: 0 !important;
   }
 }
 
@@ -146,10 +153,6 @@
     align-items: center;
     margin-top: 20px;
     gap: 20px;
-
-    .social-icons {
-      margin-right: 0;
-    }
   }
 
   .footer-section.copyright {
